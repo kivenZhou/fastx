@@ -25,7 +25,7 @@
         <ul class="space-y-4">
           <li class="flex items-center"><span class="font-medium mr-2">邮箱:</span> hello@antigravity.cn</li>
           <li class="flex items-center"><span class="font-medium mr-2">电话:</span> 400-123-4567</li>
-          <li class="flex items-start"><span class="font-medium mr-2">地址:</span> 北京市海淀区中关村互联网金融中心 12 层</li>
+          <li class="flex items-start"><span class="font-medium mr-2 shrink-0">地址:</span> <span>北京市海淀区中关村互联网金融中心 12 层</span></li>
         </ul>
       </div>
     </div>

@@ -49,7 +49,20 @@
         </nav>
 
         <!-- CTA & Mobile Toggle -->
-        <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-3">
+          <!-- Mobile Phone Action -->
+          <a href="tel:4001234567" class="md:hidden p-2 text-slate-600 hover:text-blue-600 hover:bg-slate-100 rounded-full transition-all duration-300" title="拨打电话">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+          </a>
+
+          <!-- Mobile Quote CTA -->
+          <router-link to="/contact" class="md:hidden px-4 py-1.5 rounded-full text-xs font-bold text-white bg-slate-900 border border-slate-900 hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 shadow-sm">
+            获取报价
+          </router-link>
+
+          <!-- Desktop Actions -->
           <a href="tel:4001234567" class="hidden lg:flex items-center text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors mr-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
             400-123-4567
