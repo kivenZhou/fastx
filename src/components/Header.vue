@@ -2,76 +2,39 @@
   <div class="relative w-full">
     <header 
       :class="[
-        'fixed top-0 w-full h-20 flex items-center transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]',
-        // Seamless design: remove border and shadow when menu is open
-        (isMenuOpen || isClosing) 
-          ? 'z-[70] bg-white border-transparent' 
-          : (isScrolled ? 'z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/50 shadow-[0_4px_30px_rgba(0,0,0,0.03)]' : 'z-50 bg-white/50 backdrop-blur-sm border-b border-transparent')
+        'fixed top-0 w-full h-20 flex items-center transition-all duration-300 z-50',
+        isScrolled ? 'bg-white/80 backdrop-blur-md border-b border-gray-100' : 'bg-transparent border-b border-transparent'
       ]"
     >
-      <div class="container mx-auto px-6 lg:px-12 flex items-center justify-between w-full">
-        <!-- Logo -->
-        <router-link to="/" class="flex items-center space-x-3 group outline-none" @click="isMenuOpen = false">
-          <div :class="[
-            'w-10 h-10 bg-gradient-to-br from-slate-900 to-slate-700 text-white rounded-xl flex items-center justify-center font-bold text-xl transition-all duration-500',
-            (isMenuOpen || isClosing) ? 'shadow-none scale-100' : 'shadow-lg shadow-slate-900/20 group-hover:scale-105'
-          ]">AG</div>
-          <span class="text-xl font-bold tracking-tight text-slate-900 hidden sm:block">反重力科技</span>
-        </router-link>
+      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between w-full">
+        <div class="flex items-center gap-2">
+          <!-- FX Block Logo -->
+          <router-link to="/" class="flex items-center gap-2 group" @click="isMenuOpen = false">
+            <div class="w-10 h-10 bg-accent rounded flex items-center justify-center text-white font-bold shadow-lg shadow-blue-200 transition-transform group-hover:scale-105">
+              FX
+            </div>
+            <span class="text-xl font-bold tracking-tight text-gray-900">
+              FastX<span class="text-accent">.ink</span>
+            </span>
+          </router-link>
+        </div>
 
         <!-- Desktop Navigation -->
-        <nav class="hidden md:flex items-center space-x-1">
-          <div v-for="item in navItems" :key="item.path" class="relative group px-1">
-            <router-link 
-              :to="item.path"
-              class="px-4 py-2 rounded-full text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100/80 transition-all duration-300 outline-none flex items-center"
-              active-class="text-slate-900 bg-slate-100"
-            >
-              {{ item.name }}
-              <svg v-if="item.children" xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1 text-slate-400 group-hover:text-slate-600 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
-            </router-link>
-
-            <!-- Dropdown -->
-            <div v-if="item.children" class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 z-50">
-              <div class="bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-slate-100 p-3 min-w-[240px]">
-                <router-link 
-                  v-for="child in item.children" 
-                  :key="child.path" 
-                  :to="child.path"
-                  class="flex flex-col p-3 rounded-xl hover:bg-slate-50 transition-colors group/link"
-                >
-                  <span class="text-sm font-semibold text-slate-900 group-hover/link:text-blue-600 transition-colors">{{ child.name }}</span>
-                  <span class="text-xs text-slate-500 mt-0.5">{{ child.desc }}</span>
-                </router-link>
-              </div>
-            </div>
-          </div>
+        <nav class="hidden md:flex items-center gap-10 text-sm font-medium text-gray-600">
+          <router-link v-for="item in navItems" :key="item.path" :to="item.path" 
+            class="hover:text-accent transition-colors"
+            active-class="text-accent"
+          >
+            {{ item.name }}
+          </router-link>
         </nav>
 
-        <!-- CTA & Mobile Toggle -->
-        <div class="flex items-center space-x-3">
-          <!-- Mobile Phone Action -->
-          <a href="tel:4001234567" class="md:hidden p-2 text-slate-600 hover:text-blue-600 hover:bg-slate-100 rounded-full transition-all duration-300" title="拨打电话">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-            </svg>
-          </a>
-
-          <!-- Mobile Quote CTA -->
-          <router-link to="/contact" class="md:hidden px-4 py-1.5 rounded-full text-xs font-bold text-white bg-slate-900 border border-slate-900 hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 shadow-sm">
-            获取报价
-          </router-link>
-
-          <!-- Desktop Actions -->
-          <a href="tel:4001234567" class="hidden lg:flex items-center text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors mr-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-            400-123-4567
-          </a>
-          <router-link to="/contact" class="hidden md:inline-flex items-center justify-center px-6 py-2.5 rounded-full text-sm font-bold text-white bg-slate-900 hover:bg-blue-600 transition-colors shadow-md hover:shadow-lg hover:shadow-blue-500/20">
-             获取报价
+        <div class="flex items-center gap-4">
+          <router-link to="/contact" class="hidden md:inline-flex bg-gray-900 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-accent transition shadow-lg shadow-gray-200">
+            在线预约咨询
           </router-link>
           
-          <button @click="isMenuOpen = !isMenuOpen" class="md:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-full transition-colors relative z-[80]">
+          <button @click="isMenuOpen = !isMenuOpen" class="md:hidden p-2 text-gray-900 hover:bg-gray-100 rounded-full transition-colors relative z-[100]">
             <svg v-if="!isMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
@@ -83,49 +46,26 @@
       </div>
     </header>
 
+
     <!-- Mobile Menu Overlay -->
     <transition name="mobile-menu" @after-leave="isClosing = false">
-      <div v-show="isMenuOpen" class="fixed inset-0 bg-white z-[60] flex flex-col pt-20 px-8 md:hidden overflow-y-auto">
-        <div class="flex flex-col space-y-10 pb-20 mt-10">
-          <div v-for="(item, index) in navItems" :key="item.path" 
-            class="mobile-item" 
+      <div v-show="isMenuOpen" class="fixed inset-0 bg-white z-[60] flex flex-col pt-24 px-6 md:hidden overflow-y-auto">
+        <div class="flex flex-col space-y-8 pb-20">
+          <router-link v-for="(item, index) in navItems" :key="item.path" 
+            :to="item.path"
+            class="mobile-item border-b border-gray-50 pb-6 text-2xl font-bold text-gray-900 hover:text-accent transition-colors"
             :style="{ transitionDelay: `${index * 50}ms` }"
+            @click="isMenuOpen = false"
           >
-            <div v-if="item.children" class="space-y-6">
-              <span class="text-2xl font-bold text-slate-900 block pb-2 border-b border-slate-100">{{ item.name }}</span>
-              <div class="grid grid-cols-1 gap-6">
-                <router-link 
-                  v-for="child in item.children" 
-                  :key="child.path" 
-                  :to="child.path"
-                  @click="isMenuOpen = false"
-                  class="flex items-start group"
-                >
-                  <div class="flex flex-col">
-                    <span class="text-lg font-bold text-slate-900 mb-0.5 group-active:text-blue-600 transition-colors">{{ child.name }}</span>
-                    <span class="text-sm text-slate-500 leading-tight">{{ child.desc }}</span>
-                  </div>
-                </router-link>
-              </div>
-            </div>
-            <router-link 
-              v-else
-              :to="item.path"
-              @click="isMenuOpen = false"
-              class="text-2xl font-bold text-slate-900 hover:text-blue-600 transition-colors block pb-2 border-b border-slate-100"
-            >
-              {{ item.name }}
-            </router-link>
-          </div>
-          
-          <div class="mobile-item pt-4" :style="{ transitionDelay: `${navItems.length * 50}ms` }">
-            <router-link to="/contact" @click="isMenuOpen = false" class="w-full inline-flex items-center justify-center px-6 py-4 rounded-xl text-lg font-bold text-white bg-slate-900 shadow-xl shadow-slate-900/20">
-              获取方案报价
-            </router-link>
-          </div>
+            {{ item.name }}
+          </router-link>
+          <router-link to="/contact" class="mobile-item bg-gray-900 text-white text-center py-4 rounded-xl font-bold text-lg" @click="isMenuOpen = false">
+            在线预约咨询
+          </router-link>
         </div>
       </div>
     </transition>
+
   </div>
 </template>
 
@@ -148,19 +88,10 @@ watch(isMenuOpen, (val) => {
 })
 
 const navItems = [
-  { name: '首页', path: '/' },
-  { 
-    name: '解决方案', 
-    path: '/solutions',
-    children: [
-      { name: '企业级官网', path: '/solutions#web', desc: '高端响应式 PC 与移动端网站' },
-      { name: '移动端应用 (APP)', path: '/solutions#application', desc: 'iOS & Android 原生/混合开发' },
-      { name: '微信生态体验', path: '/solutions#mini', desc: '微信/支付宝等多平台小程序' },
-      { name: '业务系统定制', path: '/solutions#sys', desc: 'SaaS、ERP、CRM 架构搭建' }
-    ]
-  },
-  { name: '客户案例', path: '/cases' },
-  { name: '关于反重力', path: '/about' }
+  { name: '解决方案', path: '/solutions' },
+  { name: '成功案例', path: '/cases' },
+  { name: '关于团队', path: '/about' },
+  { name: '联系我们', path: '/contact' }
 ]
 
 const handleScroll = () => {
@@ -208,5 +139,16 @@ header {
   opacity: 0;
   transform: translateX(-10px);
   transition-duration: 0.2s;
+}
+
+/* Logo Animations */
+.logo-stream {
+  stroke-dasharray: 20 40;
+  animation: logo-flow 2s linear infinite;
+}
+
+@keyframes logo-flow {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -60; }
 }
 </style>

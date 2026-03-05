@@ -1,19 +1,17 @@
 <template>
   <div class="bg-white min-h-screen pb-32">
     <!-- Solutions Header -->
-    <section class="relative py-32 overflow-hidden border-b border-slate-100">
-      <div class="absolute inset-0 z-0">
-        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=80" alt="Tech Background" class="w-full h-full object-cover opacity-5">
-        <div class="absolute inset-0 bg-gradient-to-br from-blue-50/80 via-white to-white"></div>
-      </div>
+    <section class="relative py-32 overflow-hidden bg-white">
+      <div class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
+           style="background-image: radial-gradient(#0088cc 1px, transparent 1px); background-size: 32px 32px;"></div>
       
-      <div class="container mx-auto px-6 max-w-5xl relative z-10 text-center" ref="headerRef" :class="[headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10', 'transition-all duration-1000 ease-out']">
-        <div class="inline-flex items-center space-x-2 bg-blue-100/50 text-blue-700 px-4 py-1.5 rounded-full text-sm font-semibold mb-8 border border-blue-200/50">
-          <span>全方位数字技术方案</span>
+      <div class="container mx-auto px-6 max-w-5xl relative z-10 text-center" ref="headerRef" :class="[headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8', 'transition-all duration-700 ease-out']">
+        <div class="inline-flex items-center space-x-2 bg-blue-50 text-accent px-4 py-1.5 rounded-full text-xs font-bold mb-8 border border-blue-100">
+          <span>全方位数字技术交付矩阵</span>
         </div>
-        <h1 class="text-6xl md:text-8xl font-black text-slate-900 mb-8 tracking-tight">我们的解决方案矩阵</h1>
-        <p class="text-xl md:text-2xl text-slate-500 font-light max-w-3xl mx-auto leading-relaxed">
-          深入业务场景，以严苛的技术标准打造覆盖全终端的数字资产。为企业的每一次在线连接赋予极致体验与澎湃性能。
+        <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 mb-8 tracking-tight">我们的解决方案</h1>
+        <p class="text-lg md:text-xl text-slate-500 font-medium max-w-3xl mx-auto leading-relaxed">
+          从底层架构到端侧交互，我们以严苛的工程化标准打造全场景数字资产。确保每一次技术连接都具备澎湃动力与极致稳定性。
         </p>
       </div>
     </section>

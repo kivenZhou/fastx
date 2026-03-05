@@ -1,18 +1,17 @@
 <template>
   <div class="bg-slate-50 pb-32">
     <!-- Header -->
-    <section class="relative py-32 bg-white overflow-hidden border-b border-slate-100">
-      <div class="absolute inset-0 z-0">
-        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2000&q=80" alt="Cases Background" class="w-full h-full object-cover opacity-5">
-        <div class="absolute inset-0 bg-gradient-to-b from-white/50 via-white to-white"></div>
-      </div>
-      <div class="container mx-auto px-6 max-w-5xl relative z-10 text-center" ref="headerRef" :class="[headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10', 'transition-all duration-1000 ease-out']">
-        <div class="inline-flex items-center space-x-2 bg-slate-100 text-slate-600 px-4 py-1.5 rounded-full text-sm font-semibold mb-8 border border-slate-200/50">
-          <span>匠心新作 · 行业标杆</span>
+    <section class="relative py-32 overflow-hidden bg-white">
+      <div class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
+           style="background-image: radial-gradient(#0088cc 1px, transparent 1px); background-size: 32px 32px;"></div>
+      
+      <div class="container mx-auto px-6 max-w-5xl relative z-10 text-center" ref="headerRef" :class="[headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8', 'transition-all duration-700 ease-out']">
+        <div class="inline-flex items-center space-x-2 bg-blue-50 text-accent px-4 py-1.5 rounded-full text-xs font-bold mb-8 border border-blue-100">
+          <span>匠心交付 · 行业标杆</span>
         </div>
-        <h1 class="text-6xl md:text-8xl font-black text-slate-900 mb-8 tracking-tight">卓越，有迹可循</h1>
-        <p class="text-xl md:text-2xl text-slate-500 font-light max-w-3xl mx-auto leading-relaxed">
-          浏览我们为全球顶尖企业构建的数字案例。从华丽的前端视觉，到坚如磐石的后端底层，每一处细节皆是匠心。
+        <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 mb-8 tracking-tight">卓越交付，有迹可循</h1>
+        <p class="text-lg md:text-xl text-slate-500 font-medium max-w-3xl mx-auto leading-relaxed">
+          浏览我们为全球领先企业构建的数字化案例。从极致的前端视觉到稳如磐石的系统底层，每一处细节皆是专业工程化的落地展现。
         </p>
       </div>
     </section>
@@ -33,18 +32,18 @@
             </div>
           </div>
           
-          <div class="flex items-center text-sm font-semibold text-blue-600 mb-3 tracking-wider uppercase">
+          <div class="flex items-center text-xs font-bold text-accent mb-3 tracking-widest uppercase">
             {{ project.industry }}
           </div>
-          <h3 class="text-3xl font-bold mb-4 text-slate-900 group-hover:text-blue-600 transition-colors">{{ project.title }}</h3>
-          <p class="text-lg text-slate-500 leading-relaxed">{{ project.summary }}</p>
+          <h3 class="text-2xl font-bold mb-4 text-slate-900 group-hover:text-accent transition-colors tracking-tight">{{ project.title }}</h3>
+          <p class="text-base text-slate-500 leading-relaxed font-medium">{{ project.summary }}</p>
         </div>
 
       </div>
       
       <div class="mt-24 text-center">
-        <router-link to="/contact" class="inline-flex items-center px-8 py-4 bg-slate-900 text-white rounded-2xl font-bold hover:bg-black transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-          与我们探讨您的项目构想
+        <router-link to="/contact" class="inline-flex items-center px-8 py-4 bg-accent text-white rounded-xl font-bold hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg">
+          开启专业评估与方案架构
         </router-link>
       </div>
     </section>

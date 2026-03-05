@@ -1,18 +1,17 @@
 <template>
   <div class="bg-slate-50 pb-32">
     <!-- Premium Header Area -->
-    <section class="relative py-32 bg-white overflow-hidden border-b border-slate-100">
-      <div class="absolute inset-0 z-0 pointer-events-none">
-        <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&w=2000&q=80" alt="Contact" class="w-full h-full object-cover opacity-5">
-        <div class="absolute inset-0 bg-gradient-to-b from-white/50 via-white to-white"></div>
-      </div>
-      <div class="container mx-auto px-6 max-w-5xl relative z-10 text-center" ref="headerRef" :class="[headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10', 'transition-all duration-1000 ease-out']">
-        <div class="inline-flex items-center space-x-2 bg-slate-100 text-slate-600 px-4 py-1.5 rounded-full text-sm font-semibold mb-8 border border-slate-200/50">
-          <span>开启合作新篇章</span>
+    <section class="relative py-32 overflow-hidden bg-white">
+      <div class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
+           style="background-image: radial-gradient(#0088cc 1px, transparent 1px); background-size: 32px 32px;"></div>
+      
+      <div class="container mx-auto px-6 max-w-5xl relative z-10 text-center" ref="headerRef" :class="[headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8', 'transition-all duration-700 ease-out']">
+        <div class="inline-flex items-center space-x-2 bg-blue-50 text-accent px-4 py-1.5 rounded-full text-xs font-bold mb-8 border border-blue-100">
+          <span>开启专业交付新篇章</span>
         </div>
-        <h1 class="text-6xl md:text-8xl font-black text-slate-900 mb-8 tracking-tight">开启您的数字旅程。</h1>
-        <p class="text-xl md:text-2xl text-slate-500 font-light max-w-3xl mx-auto leading-relaxed">
-          伟大的产品源自深度的沟通。告诉我们您的业务痛点与宏伟设想，我们的专家团队将为您量身定制技术顶层设计方案。
+        <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 mb-8 tracking-tight">开启您的数字化旅程。</h1>
+        <p class="text-lg md:text-xl text-slate-500 font-medium max-w-3xl mx-auto leading-relaxed">
+          伟大的产品源自深度的沟通。告诉我们您的业务诉求，我们的架构专家团队将为您量身定制技术顶层设计与确定性交付方案。
         </p>
       </div>
     </section>
@@ -31,7 +30,7 @@
 
             <div class="space-y-10">
               <div v-for="contact in contactInfo" :key="contact.label" class="flex items-start space-x-5 group">
-                <div class="w-12 h-12 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center text-blue-600 group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+                <div class="w-12 h-12 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center text-accent group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
                   <component :is="contact.icon" class="w-5 h-5" />
                 </div>
                 <div>
@@ -93,10 +92,10 @@
               </div>
 
               <div class="md:col-span-2 mt-4">
-                <button type="submit" class="w-full bg-slate-900 text-white py-4 px-8 rounded-xl font-bold hover:bg-black hover:shadow-xl hover:shadow-slate-900/20 transition-all transform hover:-translate-y-1 text-lg">
-                  提交并获取免费咨询
+                <button type="submit" class="w-full bg-accent text-white py-4 px-8 rounded-xl font-bold hover:bg-blue-700 hover:shadow-lg transition-all transform hover:-translate-y-1 text-lg">
+                  立即开启专家咨询
                 </button>
-                <p class="text-center text-sm text-slate-400 mt-4 leading-relaxed">提交信息即表示您同意我们的<a href="#" class="text-blue-600 hover:underline">隐私条款</a>，您的商业机密将受最高等级保护。</p>
+                <p class="text-center text-[11px] text-slate-400 mt-4 leading-relaxed tracking-wide">提交信息即表示您同意我们的<a href="#" class="text-accent hover:underline">隐私条款</a>。FastX.ink 将为您提供最高等级的商业信息保护。</p>
               </div>
             </form>
           </div>
@@ -131,8 +130,8 @@ useIntersectionObserver(formRef, ([{ isIntersecting }]) => {
 })
 
 const contactInfo = [
-  { icon: Mail, label: '大客户专线邮件', value: 'enterprise@antigravity.cn' },
-  { icon: Phone, label: '商务沟通 / 技术支持', value: '400-123-4567 转 2 企服中心' },
-  { icon: MapPin, label: '中国区研发总部', value: '北京市海淀区中关村大街 1 号互联网金融中心大厦 12 层全层' }
+  { icon: Mail, label: '需求咨询与商务专线', value: 'hello@fastx.ink' },
+  { icon: Phone, label: '技术支持与紧急响应', value: '400-888-FAST 转 1' },
+  { icon: MapPin, label: 'FastX.ink Studio 研发中心', value: '北京市朝阳区 · 数字技术创新中心 A 座高端交付区' }
 ]
 </script>

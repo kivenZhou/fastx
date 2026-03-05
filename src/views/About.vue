@@ -1,19 +1,17 @@
 <template>
   <div class="bg-white pb-32">
     <!-- Premium Header Area -->
-    <section class="relative py-32 bg-slate-50 overflow-hidden border-b border-slate-100">
-      <div class="absolute inset-0 z-0 pointer-events-none">
-        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2000&q=80" alt="Team" class="w-full h-full object-cover opacity-10">
-        <div class="absolute inset-0 bg-gradient-to-br from-blue-50/80 via-white to-white"></div>
-      </div>
+    <section class="relative py-32 overflow-hidden bg-white">
+      <div class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
+           style="background-image: radial-gradient(#0088cc 1px, transparent 1px); background-size: 32px 32px;"></div>
       
-      <div class="container mx-auto px-6 max-w-5xl relative z-10 text-center" ref="headerRef" :class="[headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10', 'transition-all duration-1000 ease-out']">
-        <div class="inline-flex items-center space-x-2 bg-indigo-100/50 text-indigo-700 px-4 py-1.5 rounded-full text-sm font-semibold mb-8 border border-indigo-200/50">
-          <span>定义技术新高度</span>
+      <div class="container mx-auto px-6 max-w-5xl relative z-10 text-center" ref="headerRef" :class="[headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8', 'transition-all duration-700 ease-out']">
+        <div class="inline-flex items-center space-x-2 bg-blue-50 text-accent px-4 py-1.5 rounded-full text-xs font-bold mb-8 border border-blue-100">
+          <span>构建数字驱动 engine</span>
         </div>
-        <h1 class="text-6xl md:text-8xl font-black text-slate-900 mb-8 tracking-tight">驱动未来的技术先锋。</h1>
-        <p class="text-xl text-slate-500 font-light max-w-3xl mx-auto leading-relaxed">
-          反重力科技（Antigravity Solutions）创立的初衷极为纯粹：用世界顶尖的软件工程造诣，为心怀雄心的企业打造真正能改变格局的数字驱动引擎。
+        <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 mb-8 tracking-tight">驱动未来的技术交付。</h1>
+        <p class="text-lg md:text-xl text-slate-500 font-medium max-w-3xl mx-auto leading-relaxed">
+          FastX.ink Studio 创立的初衷极为纯粹：用世界顶尖的软件工程造诣，为心怀雄心的企业打造真正能改变格局的数字化资产。
         </p>
       </div>
     </section>
@@ -42,18 +40,18 @@
         <!-- Metric -->
         <div class="md:col-span-4 bg-white rounded-[2.5rem] p-10 border border-slate-200 shadow-sm flex flex-col justify-center items-center text-center group hover:bg-slate-50 transition-colors" ref="metricRef" :class="[metricVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10', 'transition-all duration-1000 ease-out delay-200']">
           <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 border border-blue-100 group-hover:scale-110 transition-transform duration-500">
-            <span class="text-blue-600 font-bold text-2xl">AG</span>
+            <span class="text-accent font-bold text-2xl">FX</span>
           </div>
-          <div class="text-6xl font-black text-slate-900 mb-2 tracking-tight">10<span class="text-blue-600 text-4xl">+</span></div>
-          <div class="text-slate-500 font-medium">行业深耕经验年限</div>
+          <div class="text-6xl font-black text-slate-900 mb-2 tracking-tight">10<span class="text-accent text-4xl">+</span></div>
+          <div class="text-slate-500 font-medium">行业深耕与交付经验</div>
         </div>
 
         <!-- Team Highlights -->
         <div class="md:col-span-6 bg-gradient-to-br from-slate-50 to-slate-100 rounded-[2.5rem] p-10 border border-slate-200 relative overflow-hidden" ref="teamRef" :class="[teamVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10', 'transition-all duration-1000 ease-out delay-300']">
           <div class="relative z-10">
-             <h3 class="text-2xl font-bold text-slate-900 mb-4 tracking-tight">资深纯粹的极客团队</h3>
-             <p class="text-slate-600 leading-relaxed max-w-sm mb-8">
-               我们没有冗杂的销售流程。与您对接的是经历了百亿级流量洗礼的架构师与荣获多项大奖的主设计师。
+             <h3 class="text-2xl font-bold text-slate-900 mb-4 tracking-tight">专业稳健的执行团队</h3>
+             <p class="text-slate-600 leading-relaxed max-w-sm mb-8 font-medium italic">
+               我们不仅是开发者，更是您的商业伙伴。FastX 聚集了具备跨国企业经验的架构师与追求极致平衡的主设计师。
              </p>
              <div class="flex space-x-4">
                 <div class="w-12 h-12 rounded-full bg-slate-300 border-2 border-white shadow-sm flex items-center justify-center font-bold text-slate-500 text-sm">Tech</div>
