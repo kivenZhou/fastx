@@ -32,7 +32,7 @@
     "cta_title_gradient": "数字蓝图",
     "cta_title2": "了吗？",
     "cta_desc": "立即联系 FastX.ink 首席技术专家，获取一份为您量身定制的技术架构建议书。",
-    "cta_email": "联系 hi@fastx.ink",
+    "cta_email": "联系 hi{'@'}fastx.ink",
     "cta_book": "预约咨询",
     "portfolio_items": [
       {
@@ -187,7 +187,7 @@
     "form_privacy_link": "隐私条款",
     "form_privacy_end": "。FastX.ink 将为您提供最高等级的商业信息保护。",
     "contacts": [
-      { "label": "需求咨询与商务专线", "value": "hello@fastx.ink" },
+      { "label": "需求咨询与商务专线", "value": "hello{'@'}fastx.ink" },
       { "label": "技术支持与紧急响应", "value": "400-888-FAST 转 1" },
       { "label": "FastX.ink Studio 研发中心", "value": "北京市朝阳区 · 数字技术创新中心 A 座高端交付区" }
     ]

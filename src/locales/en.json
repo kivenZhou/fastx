@@ -32,7 +32,7 @@
     "cta_title_gradient": "Digital Blueprint",
     "cta_title2": "?",
     "cta_desc": "Contact our lead tech experts at FastX.ink for a bespoke architecture advisory.",
-    "cta_email": "Email hi@fastx.ink",
+    "cta_email": "Email hi{'@'}fastx.ink",
     "cta_book": "Book a Call",
     "portfolio_items": [
       {
@@ -187,7 +187,7 @@
     "form_privacy_link": "Privacy Policy",
     "form_privacy_end": ". FastX.ink provides top-tier protection for your business information.",
     "contacts": [
-      { "label": "Business & Consulting Hotline", "value": "hello@fastx.ink" },
+      { "label": "Business & Consulting Hotline", "value": "hello{'@'}fastx.ink" },
       { "label": "Technical Support & Emergency", "value": "+400-888-FAST ext. 1" },
       { "label": "FastX.ink Studio R&D Center", "value": "Digital Technology Innovation Center A, Chaoyang, Beijing" }
     ]
