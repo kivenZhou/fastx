@@ -183,13 +183,14 @@
     "form_project": "项目背景与核心诉求简述",
     "form_project_placeholder": "向我们简单描述您当前面临的问题，或是您伟大想法的轮廓...",
     "form_submit": "立即开启专家咨询",
-    "form_privacy": "提交信息即表示您同意我们的",
+    "form_disabled_title": "系统配置中 - 在线表单暂不可用",
+    "form_disabled_desc": "为了提供更高效的沟通，请直接通过微信或电话与项目负责人古先生取得联系。",
+    "form_privacy": "提交即代表同意",
     "form_privacy_link": "隐私条款",
     "form_privacy_end": "。FastX.ink 将为您提供最高等级的商业信息保护。",
     "contacts": [
-      { "label": "需求咨询与商务专线", "value": "hello{'@'}fastx.ink" },
-      { "label": "技术支持与紧急响应", "value": "400-888-FAST 转 1" },
-      { "label": "FastX.ink Studio 研发中心", "value": "北京市朝阳区 · 数字技术创新中心 A 座高端交付区" }
+      { "label": "项目负责人：古先生", "value": "电话 / 微信同号：18601629233" },
+      { "label": "商务与需求对接邮箱", "value": "hello{'@'}fastx.ink" }
     ]
   }
 }

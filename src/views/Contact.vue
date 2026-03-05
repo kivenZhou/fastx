@@ -54,28 +54,39 @@
             <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-full blur-[80px] pointer-events-none opacity-70"></div>
 
             <form class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-8 relative z-10" @submit.prevent>
-              <div class="space-y-2">
+              <!-- Disabled Notice -->
+              <div class="md:col-span-2 bg-amber-50 border border-amber-200 text-amber-800 px-6 py-4 rounded-xl flex items-start gap-4 mb-2">
+                <svg class="w-6 h-6 text-amber-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <div>
+                  <h4 class="font-bold">{{ $t('contact.form_disabled_title') }}</h4>
+                  <p class="text-sm mt-1 opacity-90">{{ $t('contact.form_disabled_desc') }}</p>
+                </div>
+              </div>
+
+              <div class="space-y-2 opacity-60">
                 <label class="text-sm font-semibold text-slate-700 block">{{ $t('contact.form_name') }}</label>
-                <input type="text" :placeholder="$t('contact.form_name_placeholder')"
-                  class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 focus:outline-none focus:border-blue-400 focus:ring-4 focus:ring-blue-500/10 text-slate-900 font-medium placeholder:text-slate-400 placeholder:font-normal">
+                <input type="text" :placeholder="$t('contact.form_name_placeholder')" disabled
+                  class="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-500 font-medium cursor-not-allowed">
               </div>
 
-              <div class="space-y-2">
+              <div class="space-y-2 opacity-60">
                 <label class="text-sm font-semibold text-slate-700 block">{{ $t('contact.form_company') }}</label>
-                <input type="text" :placeholder="$t('contact.form_company_placeholder')"
-                  class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 focus:outline-none focus:border-blue-400 focus:ring-4 focus:ring-blue-500/10 text-slate-900 font-medium placeholder:text-slate-400 placeholder:font-normal">
+                <input type="text" :placeholder="$t('contact.form_company_placeholder')" disabled
+                  class="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-500 font-medium cursor-not-allowed">
               </div>
 
-              <div class="md:col-span-2 space-y-2">
+              <div class="md:col-span-2 space-y-2 opacity-60">
                 <label class="text-sm font-semibold text-slate-700 block">{{ $t('contact.form_contact') }}</label>
-                <input type="text" :placeholder="$t('contact.form_contact_placeholder')"
-                  class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 focus:outline-none focus:border-blue-400 focus:ring-4 focus:ring-blue-500/10 text-slate-900 font-medium placeholder:text-slate-400 placeholder:font-normal">
+                <input type="text" :placeholder="$t('contact.form_contact_placeholder')" disabled
+                  class="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-500 font-medium cursor-not-allowed">
               </div>
 
-              <div class="md:col-span-2 space-y-2">
+              <div class="md:col-span-2 space-y-2 opacity-60">
                 <label class="text-sm font-semibold text-slate-700 block">{{ $t('contact.form_service') }}</label>
                 <div class="relative">
-                  <select class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 focus:outline-none focus:border-blue-400 focus:ring-4 focus:ring-blue-500/10 appearance-none text-slate-900 font-medium cursor-pointer">
+                  <select disabled class="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-3.5 appearance-none text-slate-500 font-medium cursor-not-allowed">
                     <option v-for="(opt, i) in $tm('contact.form_services_options')" :key="i">{{ rt(opt) }}</option>
                   </select>
                   <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
@@ -84,15 +95,15 @@
                 </div>
               </div>
 
-              <div class="md:col-span-2 space-y-2">
+              <div class="md:col-span-2 space-y-2 opacity-60">
                 <label class="text-sm font-semibold text-slate-700 block">{{ $t('contact.form_project') }}</label>
-                <textarea rows="4" :placeholder="$t('contact.form_project_placeholder')"
-                  class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 focus:outline-none focus:border-blue-400 focus:ring-4 focus:ring-blue-500/10 text-slate-900 font-medium placeholder:text-slate-400 placeholder:font-normal resize-none"></textarea>
+                <textarea rows="4" :placeholder="$t('contact.form_project_placeholder')" disabled
+                  class="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-500 font-medium cursor-not-allowed resize-none"></textarea>
               </div>
 
               <div class="md:col-span-2 mt-2">
-                <button type="submit"
-                  class="w-full bg-gray-900 text-white py-4 px-8 rounded-xl font-bold hover:bg-accent hover:shadow-[0_0_25px_rgba(37,99,235,0.4)] transition-all transform hover:-translate-y-1 text-lg">
+                <button type="button" disabled
+                  class="w-full bg-slate-300 text-slate-500 py-4 px-8 rounded-xl font-bold cursor-not-allowed text-lg">
                   {{ $t('contact.form_submit') }}
                 </button>
                 <p class="text-center text-[11px] text-slate-400 mt-4 leading-relaxed">
@@ -111,11 +122,11 @@
 <script setup>
 import { onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { Mail, Phone, MapPin } from 'lucide-vue-next'
+import { Mail, Phone, User } from 'lucide-vue-next'
 
 const { rt, tm } = useI18n()
 
-const contactIcons = [Mail, Phone, MapPin]
+const contactIcons = [User, Mail]
 
 onMounted(() => {
   const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right')
