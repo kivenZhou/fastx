@@ -1,43 +1,38 @@
 <template>
   <div class="bg-white min-h-screen pb-32">
-    <!-- Solutions Header -->
     <section class="relative py-36 overflow-hidden bg-white">
-      <!-- Dot grid -->
       <div class="absolute inset-0 z-0 opacity-[0.04] pointer-events-none"
            style="background-image: radial-gradient(#2563eb 1px, transparent 1px); background-size: 32px 32px;"></div>
-      <!-- Accent glow -->
       <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-blue-100 rounded-full blur-3xl opacity-40 pointer-events-none"></div>
 
-      <div class="container mx-auto px-6 max-w-5xl relative z-10 text-center reveal" ref="headerRef">
+      <div class="container mx-auto px-6 max-w-5xl relative z-10 text-center reveal">
         <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-600 px-5 py-2 rounded-full text-xs font-bold mb-10 border border-blue-100 uppercase tracking-widest">
           <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse inline-block"></span>
-          全方位数字技术交付矩阵
+          {{ $t('solutions.badge') }}
         </div>
-        <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 mb-8 tracking-tight leading-[1.05]">我们的<span class="gradient-text">解决方案</span></h1>
+        <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 mb-8 tracking-tight leading-[1.05]">
+          {{ $t('solutions.title1') }}<span class="gradient-text">{{ $t('solutions.title_gradient') }}</span>
+        </h1>
         <p class="text-lg md:text-xl text-slate-500 font-medium max-w-3xl mx-auto leading-relaxed">
-          从底层架构到端侧交互，我们以严苛的工程化标准打造全场景数字资产。确保每一次技术连接都具备澎湃动力与极致稳定性。
+          {{ $t('solutions.desc') }}
         </p>
       </div>
     </section>
 
-    <!-- Detailed Solutions -->
     <div class="container mx-auto px-6 max-w-7xl mt-8 space-y-40">
 
       <!-- PC Web -->
-      <section id="web" class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 scroll-mt-40" ref="webRef">
+      <section id="web" class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 scroll-mt-40">
         <div class="lg:w-1/2 reveal-left">
           <div class="w-16 h-16 icon-card-blue rounded-2xl flex items-center justify-center mb-8 shadow-sm glow-blue">
             <Monitor class="w-8 h-8" />
           </div>
-          <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6 tracking-tight">企业级 PC 官网与管理平台</h2>
-          <p class="text-lg text-slate-500 leading-relaxed mb-8">
-            在宽广的桌面端，展现您恢弘的品牌气象。我们精通 Vue/React 生态，配合服务端渲染（SSR）技术，为您带来秒级首屏加载与极佳的 SEO 表现。
-          </p>
+          <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6 tracking-tight">{{ $t('solutions.web_title') }}</h2>
+          <p class="text-lg text-slate-500 leading-relaxed mb-8">{{ $t('solutions.web_desc') }}</p>
           <ul class="space-y-4 mb-10 text-slate-700">
-            <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-blue-500 shrink-0"></span>高端品牌互动响应式网站</li>
-            <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-blue-500 shrink-0"></span>B2B / B2C 大型电商交易平台</li>
-            <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-blue-500 shrink-0"></span>复杂数据可视化大屏呈现</li>
-            <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-blue-500 shrink-0"></span>定制化 ERP / CRM 内部管理系统</li>
+            <li v-for="(item, i) in $tm('solutions.web_items')" :key="i" class="flex items-center gap-3">
+              <span class="w-2 h-2 rounded-full bg-blue-500 shrink-0"></span>{{ rt(item) }}
+            </li>
           </ul>
         </div>
         <div class="lg:w-1/2 w-full aspect-video rounded-[2rem] border border-slate-200 shadow-2xl overflow-hidden relative group reveal-right">
@@ -47,20 +42,17 @@
       </section>
 
       <!-- App -->
-      <section id="application" class="flex flex-col lg:flex-row-reverse items-center gap-16 lg:gap-24 scroll-mt-40" ref="appRef">
+      <section id="application" class="flex flex-col lg:flex-row-reverse items-center gap-16 lg:gap-24 scroll-mt-40">
         <div class="lg:w-1/2 reveal-right">
           <div class="w-16 h-16 icon-card-indigo rounded-2xl flex items-center justify-center mb-8 shadow-sm glow-indigo">
             <Smartphone class="w-8 h-8" />
           </div>
-          <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6 tracking-tight">移动端 App (iOS &amp; Android)</h2>
-          <p class="text-lg text-slate-500 leading-relaxed mb-8">
-            紧握指尖的无限可能。采用最新的跨平台框架或纯原生技术栈，确保在海量设备上维持 60fps 的丝滑体验。
-          </p>
+          <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6 tracking-tight">{{ $t('solutions.app_title') }}</h2>
+          <p class="text-lg text-slate-500 leading-relaxed mb-8">{{ $t('solutions.app_desc') }}</p>
           <ul class="space-y-4 mb-10 text-slate-700">
-            <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-indigo-500 shrink-0"></span>Swift &amp; Kotlin 原生应用开发</li>
-            <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-indigo-500 shrink-0"></span>Flutter / React Native 高性能混合开发</li>
-            <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-indigo-500 shrink-0"></span>物联网 (IoT) 硬件通讯级控制应用</li>
-            <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-indigo-500 shrink-0"></span>音视频与即时通讯底层集成</li>
+            <li v-for="(item, i) in $tm('solutions.app_items')" :key="i" class="flex items-center gap-3">
+              <span class="w-2 h-2 rounded-full bg-indigo-500 shrink-0"></span>{{ rt(item) }}
+            </li>
           </ul>
         </div>
         <div class="lg:w-1/2 w-full aspect-video rounded-[2rem] border border-slate-200 shadow-2xl overflow-hidden relative group reveal-left">
@@ -70,19 +62,17 @@
       </section>
 
       <!-- Mini Program -->
-      <section id="mini" class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 scroll-mt-40" ref="miniRef">
+      <section id="mini" class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 scroll-mt-40">
         <div class="lg:w-1/2 reveal-left">
           <div class="w-16 h-16 icon-card-green rounded-2xl flex items-center justify-center mb-8 shadow-sm glow-green">
             <Layout class="w-8 h-8" />
           </div>
-          <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6 tracking-tight">全矩阵生态小程序</h2>
-          <p class="text-lg text-slate-500 leading-relaxed mb-8">
-            触手可及的超级入口。我们不仅帮您在微信、支付宝、抖音等生态中占得先机，更通过精妙的性能优化突破小程序的体积限制。
-          </p>
+          <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6 tracking-tight">{{ $t('solutions.mini_title') }}</h2>
+          <p class="text-lg text-slate-500 leading-relaxed mb-8">{{ $t('solutions.mini_desc') }}</p>
           <ul class="space-y-4 mb-10 text-slate-700">
-            <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>多端一致的云原生基础架构搭建</li>
-            <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>复杂的社交电商与裂变玩法引擎</li>
-            <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>O2O 线上线下一体化解决方案</li>
+            <li v-for="(item, i) in $tm('solutions.mini_items')" :key="i" class="flex items-center gap-3">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>{{ rt(item) }}
+            </li>
           </ul>
         </div>
         <div class="lg:w-1/2 w-full aspect-video rounded-[2rem] border border-slate-200 shadow-2xl overflow-hidden relative group reveal-right">
@@ -91,21 +81,18 @@
         </div>
       </section>
 
-      <!-- System Customization -->
-      <section id="sys" class="flex flex-col lg:flex-row-reverse items-center gap-16 lg:gap-24 scroll-mt-40" ref="sysRef">
+      <!-- SaaS/ERP -->
+      <section id="sys" class="flex flex-col lg:flex-row-reverse items-center gap-16 lg:gap-24 scroll-mt-40">
         <div class="lg:w-1/2 reveal-right">
           <div class="w-16 h-16 icon-card-orange rounded-2xl flex items-center justify-center mb-8 shadow-sm glow-orange">
             <Layout class="w-8 h-8" />
           </div>
-          <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6 tracking-tight">行业业务系统定制 (SaaS/ERP)</h2>
-          <p class="text-lg text-slate-500 leading-relaxed mb-8">
-            数字化转型的核心骨架。我们深入理解垂直行业逻辑，构建从底层数据库设计到上层交互细节全定制的业务系统。
-          </p>
+          <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6 tracking-tight">{{ $t('solutions.sys_title') }}</h2>
+          <p class="text-lg text-slate-500 leading-relaxed mb-8">{{ $t('solutions.sys_desc') }}</p>
           <ul class="space-y-4 mb-10 text-slate-700">
-            <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-orange-500 shrink-0"></span>多租户 SaaS 架构平台搭建</li>
-            <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-orange-500 shrink-0"></span>生产制造 ERP 与供应链管理系统</li>
-            <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-orange-500 shrink-0"></span>私有化部署与内网安全环境集成</li>
-            <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-orange-500 shrink-0"></span>三方系统 (钉钉/飞书/企微) 深度打通</li>
+            <li v-for="(item, i) in $tm('solutions.sys_items')" :key="i" class="flex items-center gap-3">
+              <span class="w-2 h-2 rounded-full bg-orange-500 shrink-0"></span>{{ rt(item) }}
+            </li>
           </ul>
         </div>
         <div class="lg:w-1/2 w-full aspect-video rounded-[2rem] border border-slate-200 shadow-2xl overflow-hidden relative group reveal-left">
@@ -121,16 +108,16 @@
 <script setup>
 import { ref, watch, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import { Monitor, Smartphone, Layout } from 'lucide-vue-next'
 
+const { rt, tm } = useI18n()
 const route = useRoute()
 
 const scrollToHash = (hash) => {
   if (!hash) return
   const element = document.querySelector(hash)
-  if (element) {
-    setTimeout(() => { element.scrollIntoView({ behavior: 'smooth' }) }, 100)
-  }
+  if (element) setTimeout(() => element.scrollIntoView({ behavior: 'smooth' }), 100)
 }
 
 watch(() => route.hash, (newHash) => {
@@ -139,7 +126,6 @@ watch(() => route.hash, (newHash) => {
 
 onMounted(() => {
   if (route.hash) scrollToHash(route.hash)
-  
   const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right')
   const observer = new IntersectionObserver(
     (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') }),
@@ -147,10 +133,4 @@ onMounted(() => {
   )
   els.forEach(el => observer.observe(el))
 })
-
-const headerRef = ref(null)
-const webRef = ref(null)
-const appRef = ref(null)
-const miniRef = ref(null)
-const sysRef = ref(null)
 </script>

@@ -1,0 +1,195 @@
+{
+  "nav": {
+    "home": "Home",
+    "solutions": "Solutions",
+    "cases": "Cases",
+    "about": "About",
+    "contact": "Contact",
+    "cta": "Book a Consultation"
+  },
+  "footer": {
+    "tagline": "Infinite Logic, Instant Delivery.",
+    "copyright": "© 2026 FastX Technology Studio. Designed for Enterprises."
+  },
+  "home": {
+    "badge": "Next-Gen Enterprise Tech Delivery Experts",
+    "title1": "Engineering Excellence for Instant Delivery",
+    "title2": "Build the Digital Future",
+    "desc": "At FastX.ink, we harness cutting-edge engineering expertise to deliver",
+    "desc_instant": "instant",
+    "desc_and": "and",
+    "desc_certain": "certain",
+    "desc_end": "outcomes for global businesses.",
+    "cta_start": "Start Your Project",
+    "cta_portfolio": "View Our Work",
+    "portfolio_title": "Selected Deliveries",
+    "portfolio_sub": "High-performance digital products built on the FastX engineering principles.",
+    "services_title": "Full-Stack Tech Capabilities",
+    "services_sub": "Built on 2026's leading tech stack — elastic, scalable digital assets for your business.",
+    "process_sub": "We simplify complex development into four intuitive delivery phases.",
+    "faq_title": "Frequently Asked Questions",
+    "cta_title1": "Ready to launch your",
+    "cta_title_gradient": "Digital Blueprint",
+    "cta_title2": "?",
+    "cta_desc": "Contact our lead tech experts at FastX.ink for a bespoke architecture advisory.",
+    "cta_email": "Email hi@fastx.ink",
+    "cta_book": "Book a Call",
+    "portfolio_items": [
+      {
+        "title": "Smart Logistics Dispatch Management System",
+        "desc": "A custom automated logistics platform for a global enterprise, reducing labor costs by 30%."
+      },
+      {
+        "title": "Community 15-Minute Living Circle App",
+        "desc": "Silky-smooth native experience with integrated maps and instant payment functionality."
+      },
+      {
+        "title": "Private Domain New Retail Mini-Program",
+        "desc": "High-concurrency architecture supporting millions of DAUs, driving digital brand growth."
+      }
+    ],
+    "services_items": [
+      {
+        "name": "Web Portals & Admin Systems",
+        "desc": "Using Next.js SSR technology for lightning-fast load times and superior SEO performance."
+      },
+      {
+        "name": "Multi-Platform App Development",
+        "desc": "One Flutter codebase for iOS and Android — reduced costs with native-quality interactions."
+      },
+      {
+        "name": "SaaS & Cloud-Native Architecture",
+        "desc": "Deep expertise in Docker/Kubernetes deployments for elastic, scalable backend infrastructure."
+      }
+    ],
+    "steps_items": [
+      {
+        "title": "Deep Strategy Consulting",
+        "desc": "Map core logic, produce PRD and technical feasibility reports. No blind starts."
+      },
+      {
+        "title": "Instant Architecture Prototype",
+        "desc": "High-fidelity UI and interactive prototypes within 48 hours for rapid direction confirmation."
+      },
+      {
+        "title": "Kanban-Style Development",
+        "desc": "Clients monitor Git commits and test progress in real time. Full transparency throughout."
+      },
+      {
+        "title": "Full-Lifecycle After-Sales",
+        "desc": "Source code delivery, documentation handover, and one year of system stability support."
+      }
+    ],
+    "faqs_items": [
+      {
+        "question": "Do you provide full source code after delivery?",
+        "answer": "Yes. FastX.ink commits to a complete handover of Git repository access, deployment scripts, and all technical documentation — no technical lock-in."
+      },
+      {
+        "question": "Can the system scale if our business grows?",
+        "answer": "Absolutely. Our 'Instant Architecture' is container-native, supporting elastic scaling. From 1,000 to 100,000 DAUs, scalability is built-in."
+      },
+      {
+        "question": "How do you price your services?",
+        "answer": "We use tiered fixed-price quotes based on feature complexity and estimated hours. No low-ball entry with hidden costs later."
+      }
+    ]
+  },
+  "solutions": {
+    "badge": "Full-Spectrum Digital Tech Delivery Matrix",
+    "title1": "Our",
+    "title_gradient": "Solutions",
+    "desc": "From backend architecture to end-side interactions, we build complete digital assets to the highest engineering standards.",
+    "web_title": "Enterprise PC Websites & Admin Platforms",
+    "web_desc": "Command attention on the desktop. Expert in Vue/React with SSR for blazing-fast first screens and excellent SEO.",
+    "web_items": ["Premium Interactive Responsive Websites", "B2B / B2C Large-Scale E-Commerce Platforms", "Complex Data Visualization Dashboards", "Custom ERP / CRM Internal Management Systems"],
+    "app_title": "Mobile Apps (iOS & Android)",
+    "app_desc": "Infinite possibilities at your fingertips. Cross-platform or native, delivering 60fps experiences across all devices.",
+    "app_items": ["Swift & Kotlin Native App Development", "Flutter / React Native High-Performance Hybrid Dev", "IoT Hardware Communication-Level Control Apps", "Audio/Video & Instant Messaging Deep Integration"],
+    "mini_title": "Full-Ecosystem Mini Programs",
+    "mini_desc": "The touchable super-interface. We help you win on WeChat, Alipay, Douyin and more, overcoming size limits with micro-optimizations.",
+    "mini_items": ["Multi-Platform Cloud-Native Infrastructure", "Social Commerce & Viral Growth Engines", "O2O Online-Offline Integrated Solutions"],
+    "sys_title": "Industry Business System Customization (SaaS/ERP)",
+    "sys_desc": "The core skeleton of digital transformation. We build fully custom business systems from database design to UI interaction details.",
+    "sys_items": ["Multi-Tenant SaaS Platform Construction", "Manufacturing ERP & Supply Chain Management", "Private Deployment & Intranet Security Integration", "Third-Party System (DingTalk/Feishu/WeCom) Deep Integration"]
+  },
+  "cases": {
+    "badge": "Masterful Delivery · Industry Benchmark",
+    "title1": "Outstanding Results,",
+    "title_gradient": "Proven Track Record",
+    "desc": "Browse the digital products we've built for world-class enterprises — every detail reflects professional engineering at its finest.",
+    "cta": "Start Your Professional Assessment",
+    "items": [
+      {
+        "title": "Reshaping Global New Retail: A Top Fresh Produce E-Commerce Cloud Ecosystem",
+        "summary": "We rebuilt their high-concurrency user APP and warehouse ERP from scratch — millisecond response at millions of DAUs, 200%+ order efficiency improvement.",
+        "industry": "New Retail / E-Commerce"
+      },
+      {
+        "title": "Digital Financial Innovation: A Unicorn Licensed Institution's Website & Trading Hall",
+        "summary": "A premium, minimalist visual language fused with complex financial data logic, supporting real-time multi-platform data delivery. Achieved 99.999% system stability.",
+        "industry": "FinTech"
+      },
+      {
+        "title": "The Smart Healthcare Super-Gateway: A Top-Tier Hospital's Million-User WeChat Platform",
+        "summary": "We built a seamless payment and report delivery system inside WeChat, winning over millions of patients with age-friendly interaction design.",
+        "industry": "Smart Healthcare"
+      },
+      {
+        "title": "Industry 4.0 Benchmark: A Manufacturer's Cloud IoT Management Hub",
+        "summary": "The digital nervous system for industrial hardware. Via data processing and cloud modeling, managers can view real-time 3D twins of 10,000+ machines from any browser.",
+        "industry": "Industrial Manufacturing"
+      }
+    ]
+  },
+  "about": {
+    "badge": "Building the Digital Drive Engine",
+    "title1": "Tech Delivery That",
+    "title_gradient": "Drives the Future",
+    "desc": "FastX.ink Studio was founded with a singular purpose: to deliver digital assets that truly reshape markets, using world-class software engineering.",
+    "creed": "Our Creed",
+    "vision_title": "An unrelenting pursuit of absolute code quality and minimalist aesthetics.",
+    "vision_p1": "In an era of throwaway software outsourcing, we choose to be different. We believe great code is like a precision V8 engine — built to be fast, stable, and scalable. And UI design is the luxurious interior; it should make you fall in love at first sight.",
+    "vision_p2": "From Silicon Valley architecture thinking to top design systems, we bring the world's best practices to every partner — completely reshaping your digital competitive advantage.",
+    "metric_label": "Years of Industry Experience & Delivery",
+    "team_title": "Our Professional Execution Team",
+    "team_desc": "We're not just developers — we're your business partners. FastX brings together architects with cross-border enterprise experience and principal designers who pursue the perfect balance.",
+    "values_title": "Full-Stack Delivery Capabilities",
+    "values": [
+      { "title": "Cloud-Native Architecture", "desc": "K8s, Docker, CI/CD automated deployment guaranteed." },
+      { "title": "Financial-Grade Security", "desc": "SQL injection prevention, rate limiting, and bidirectional data encryption." },
+      { "title": "Pixel-Perfect Visual Fidelity", "desc": "100% design spec adherence — every curve and whitespace perfected." },
+      { "title": "7x24 Ops Coverage", "desc": "Round-the-clock monitoring with second-level incident response." }
+    ]
+  },
+  "contact": {
+    "badge": "Start a New Chapter of Professional Delivery",
+    "title1": "Start Your",
+    "title_gradient": "Digital Journey",
+    "title2": ".",
+    "desc": "Great products come from deep conversations. Tell us your business needs and our expert team will craft a bespoke technical strategy for you.",
+    "info_title": "Talk Directly to the Technical Core",
+    "info_desc": "Whether you're an early-stage startup or a Fortune 500 seeking a system overhaul — we're always ready.",
+    "enterprise_title": "Enterprise Dedicated Line",
+    "enterprise_desc": "1-on-1 deep consultation with a dedicated account manager. Free technology selection advice and project scheduling.",
+    "form_name": "Your Name",
+    "form_name_placeholder": "e.g. John Smith",
+    "form_company": "Your Company",
+    "form_company_placeholder": "e.g. Acme Technology Inc.",
+    "form_contact": "Work Email or Phone",
+    "form_contact_placeholder": "Email or phone number for easy communication",
+    "form_service": "Which services are you looking for?",
+    "form_services_options": ["Enterprise PC Website Architecture", "Multi-Platform Mobile Apps (iOS / Android Native or Cross-Platform)", "WeChat / Full-Ecosystem Mini-Program Development", "Complex Digital Business Backend Systems", "Full-Stack Consulting & Comprehensive Dev Solutions"],
+    "form_project": "Project Background & Core Requirements",
+    "form_project_placeholder": "Briefly describe the challenges you're facing or the outline of your great idea...",
+    "form_submit": "Start Your Expert Consultation",
+    "form_privacy": "By submitting, you agree to our",
+    "form_privacy_link": "Privacy Policy",
+    "form_privacy_end": ". FastX.ink provides top-tier protection for your business information.",
+    "contacts": [
+      { "label": "Business & Consulting Hotline", "value": "hello@fastx.ink" },
+      { "label": "Technical Support & Emergency", "value": "+400-888-FAST ext. 1" },
+      { "label": "FastX.ink Studio R&D Center", "value": "Digital Technology Innovation Center A, Chaoyang, Beijing" }
+    ]
+  }
+}
