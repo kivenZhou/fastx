@@ -3,20 +3,15 @@
   <div class="h-20 w-full shrink-0">
     <header
       :class="[
-        'fixed top-0 left-0 right-0 h-20 flex items-center z-[70]',
-        isScrolled ? 'bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm' : 'bg-transparent'
+        'fixed top-0 left-0 right-0 h-20 flex items-center z-[70] border-b',
+        isScrolled ? 'bg-white/80 backdrop-blur-md border-gray-100 shadow-sm' : 'bg-transparent border-transparent shadow-none'
       ]"
       style="transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; -webkit-transform: translateZ(0); transform: translateZ(0); will-change: transform;"
     >
       <div class="max-w-7xl mx-auto px-6 w-full flex items-center justify-between">
         <div class="flex items-center gap-2">
           <router-link to="/" class="flex items-center gap-2 group" @click="isMenuOpen = false">
-            <div class="w-10 h-10 bg-accent rounded flex items-center justify-center text-white font-bold shadow-lg shadow-blue-200 transition-transform group-hover:scale-105">
-              FX
-            </div>
-            <span class="text-xl font-bold tracking-tight text-gray-900">
-              FastX<span class="text-accent">.ink</span>
-            </span>
+            <img src="../assets/images/logo.png" alt="FastX.ink Logo" class="h-10 w-auto group-hover:scale-105 transition-transform" />
           </router-link>
         </div>
 
@@ -121,7 +116,7 @@ const navItems = computed(() => [
 ])
 
 const handleScroll = () => {
-  isScrolled.value = window.scrollY > 5
+  isScrolled.value = window.scrollY > 1
 }
 
 onMounted(() => {

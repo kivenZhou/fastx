@@ -3,8 +3,7 @@
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
       <div class="flex flex-col items-center md:items-start text-center md:text-left">
         <div class="flex items-center gap-2 mb-4">
-          <div class="w-8 h-8 bg-accent rounded flex items-center justify-center text-white font-bold text-sm">FX</div>
-          <span class="text-lg font-bold text-gray-900">FastX.ink</span>
+          <img src="../assets/images/logo.png" alt="FastX.ink Logo" class="h-8 w-auto" />
         </div>
         <p class="text-gray-400 text-sm italic mono">{{ $t('footer.tagline') }}</p>
       </div>
