@@ -1,7 +1,7 @@
 <template>
-  <div class="min-h-screen flex flex-col bg-primary text-slate-800">
+  <div class="min-h-screen flex flex-col bg-primary text-slate-800 overflow-x-hidden">
     <Header />
-    <main class="flex-grow pt-20">
+    <main class="flex-grow">
       <router-view v-slot="{ Component }">
         <transition name="fade" mode="out-in">
           <component :is="Component" />

@@ -1,12 +1,14 @@
 <template>
-  <div class="relative w-full">
+  <!-- This div is the layout placeholder (takes space in the flex column) -->
+  <div class="h-20 w-full shrink-0">
     <header
       :class="[
-        'fixed top-0 w-full h-20 flex items-center transition-all duration-300 z-50',
-        isScrolled ? 'bg-white/80 backdrop-blur-md border-b border-gray-100' : 'bg-transparent border-b border-transparent'
+        'fixed top-0 left-0 right-0 h-20 flex items-center z-[70]',
+        isScrolled ? 'bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm' : 'bg-transparent'
       ]"
+      style="transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; -webkit-transform: translateZ(0); transform: translateZ(0); will-change: transform;"
     >
-      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between w-full">
+      <div class="max-w-7xl mx-auto px-6 w-full flex items-center justify-between">
         <div class="flex items-center gap-2">
           <router-link to="/" class="flex items-center gap-2 group" @click="isMenuOpen = false">
             <div class="w-10 h-10 bg-accent rounded flex items-center justify-center text-white font-bold shadow-lg shadow-blue-200 transition-transform group-hover:scale-105">
@@ -119,7 +121,7 @@ const navItems = computed(() => [
 ])
 
 const handleScroll = () => {
-  isScrolled.value = window.scrollY > 10
+  isScrolled.value = window.scrollY > 5
 }
 
 onMounted(() => {
