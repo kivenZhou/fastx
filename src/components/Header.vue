@@ -88,6 +88,7 @@ watch(isMenuOpen, (val) => {
 })
 
 const navItems = [
+  { name: '首页', path: '/' },
   { name: '解决方案', path: '/solutions' },
   { name: '成功案例', path: '/cases' },
   { name: '关于团队', path: '/about' },

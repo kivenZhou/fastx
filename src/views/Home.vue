@@ -12,13 +12,13 @@
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
             <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
           </span>
-          由开发者驱动的技术工作室
+          下一代企业级技术交付专家
         </div>
-        <h1 class="text-6xl md:text-7xl lg:text-[6rem] font-bold mb-8 text-gray-900 leading-[1.05] tracking-tight">
-          用卓越工程造诣实现瞬时交付<br><span class="gradient-text text-5xl md:text-7xl lg:text-[5rem] font-black">构建数字未来</span>
+        <h1 class="text-6xl md:text-7xl lg:text-[6.5rem] font-bold mb-8 text-gray-900 leading-[1] tracking-tight">
+          用卓越工程造诣实现瞬时交付<br><span class="gradient-text text-5xl md:text-7xl lg:text-[5.5rem] font-black">构建数字未来</span>
         </h1>
         <p class="max-w-2xl mx-auto text-xl md:text-2xl text-gray-500 mb-14 leading-relaxed font-medium">
-          在 FastX.ink，我们通过工程化体系，为全球业务提供<span class="text-gray-900 font-bold">确定性</span>的技术交付。
+          在 FastX.ink，我们凝聚前沿技术造诣，为全球业务实现<span class="text-gray-900 font-bold italic">瞬时</span>且<span class="text-gray-900 font-bold italic">确定</span>的卓越交付。
         </p>
         <div class="flex flex-wrap justify-center gap-6">
           <a href="#services" class="px-10 py-5 bg-gray-900 text-white rounded-2xl font-bold text-lg hover:shadow-2xl transition-all transform hover:-translate-y-1">
@@ -34,15 +34,15 @@
     <!-- 成功案例展示 - Bento Layout -->
     <section id="portfolio" class="py-32 px-6 bg-white overflow-hidden">
       <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-4">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-4 reveal-section">
           <div>
             <h2 class="text-5xl font-bold mb-4 tracking-tight text-gray-900">精选交付</h2>
-            <p class="text-gray-500 font-medium text-lg">基于 Antigravity 原则打造的高性能数字产品。</p>
+            <p class="text-gray-500 font-medium text-lg">遵循 FastX 极简工程化原则的高性能数字产品。</p>
           </div>
         </div>
         
         <!-- Bento Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-8 h-auto md:h-[800px]">
+        <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-8 h-auto md:h-[800px] reveal-section delay-200">
           <!-- Large Item -->
           <div class="md:col-span-2 md:row-span-2 glass-card rounded-[2.5rem] overflow-hidden group cursor-pointer p-2">
             <div class="h-full w-full rounded-[2rem] overflow-hidden relative">
@@ -77,11 +77,11 @@
     <!-- 服务领域 -->
     <section id="services" class="py-32 px-6 bg-gray-50">
       <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-20">
+        <div class="text-center mb-20 reveal-section">
           <h2 class="text-4xl font-bold mb-4 tracking-tight text-gray-900">全栈技术服务能力</h2>
           <p class="text-gray-500 font-medium">基于 2026 年主流技术栈，为您打造弹性、可扩展的数字资产。</p>
         </div>
-        <div class="grid md:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-3 gap-8 reveal-section delay-200">
           <div v-for="service in services" :key="service.name" 
             class="p-10 bg-white rounded-3xl shadow-sm hover:shadow-xl transition duration-500 border border-gray-100 group"
           >
@@ -132,17 +132,27 @@
       </div>
     </section>
 
-    <!-- 底部召唤 -->
-    <section class="py-32 px-6 bg-accent text-white text-center relative overflow-hidden">
-      <!-- Decorative background -->
-      <div class="absolute inset-0 opacity-10 pointer-events-none hero-grid"></div>
+    <!-- 底部召唤 - Redesigned Premium CTA -->
+    <section class="py-32 px-6 relative overflow-hidden bg-gray-900">
+      <!-- Deep Dynamic Background -->
+      <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-950 to-gray-900 opacity-90"></div>
+      <div class="absolute inset-0 opacity-20 pointer-events-none hero-grid animate-pulse-slow"></div>
       
-      <div class="relative z-10">
-        <h2 class="text-4xl md:text-5xl font-extrabold mb-8 tracking-tight leading-tight">准备好启动您的数字蓝图了吗？</h2>
-        <p class="mb-12 text-blue-100 text-xl max-w-2xl mx-auto font-medium">立即联系 FastX.ink 首席技术专家，获取一份免费的技术架构建议书。</p>
-        <a href="mailto:hi@fastx.ink" class="inline-flex bg-white text-accent px-10 py-5 rounded-2xl font-bold text-xl hover:shadow-2xl transition-all transform hover:-translate-y-1">
-          联系 hi@fastx.ink
-        </a>
+      <div class="max-w-4xl mx-auto text-center relative z-10 reveal-section">
+        <h2 class="text-4xl md:text-6xl font-bold mb-8 tracking-tight leading-tight text-white">
+          准备好启动您的<span class="gradient-text">数字蓝图</span>了吗？
+        </h2>
+        <p class="mb-14 text-blue-100/70 text-xl max-w-2xl mx-auto font-medium leading-relaxed">
+          立即联系 FastX.ink 首席技术专家，获取一份为您量身定制的技术架构建议书。
+        </p>
+        <div class="flex flex-wrap justify-center gap-6">
+          <a href="mailto:hi@fastx.ink" class="px-12 py-5 bg-white text-gray-900 rounded-2xl font-bold text-xl hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all transform hover:-translate-y-1">
+            联系 hi@fastx.ink
+          </a>
+          <router-link to="/contact" class="px-12 py-5 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-2xl font-bold text-xl hover:bg-white/20 transition-all">
+            预约咨询
+          </router-link>
+        </div>
       </div>
     </section>
 
@@ -150,7 +160,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useIntersectionObserver } from '@vueuse/core'
 import ParticleBackground from '../components/ParticleBackground.vue'
 import { 
@@ -167,22 +177,19 @@ import {
   Plus
 } from 'lucide-vue-next'
 
-const heroRef = ref(null)
-const heroVisible = ref(false)
-useIntersectionObserver(heroRef, ([{ isIntersecting }]) => {
-  if (isIntersecting) heroVisible.value = true
-})
+const revealSections = ref([])
 
-const xRef = ref(null)
-const xVisible = ref(false)
-useIntersectionObserver(xRef, ([{ isIntersecting }]) => {
-  if (isIntersecting) xVisible.value = true
-})
-
-const processRef = ref(null)
-const processVisible = ref(false)
-useIntersectionObserver(processRef, ([{ isIntersecting }]) => {
-  if (isIntersecting) processVisible.value = true
+onMounted(() => {
+  const sections = document.querySelectorAll('.reveal-section')
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active')
+      }
+    })
+  }, { threshold: 0.1 })
+  
+  sections.forEach(section => observer.observe(section))
 })
 
 const portfolio = [
@@ -236,5 +243,26 @@ const faqs = [
 </script>
 
 <style scoped>
-/* Specific clean typography overrides if necessary */
+.reveal-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-section.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-200 { transition-delay: 200ms; }
+.delay-400 { transition-delay: 400ms; }
+
+@keyframes logo-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(0.98); }
+}
+
+.animate-pulse-slow {
+  animation: logo-pulse 4s ease-in-out infinite;
+}
 </style>

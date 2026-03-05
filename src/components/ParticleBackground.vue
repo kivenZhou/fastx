@@ -34,25 +34,38 @@ class Particle {
   }
 
   update() {
-    // Basic drift
-    this.angle += 0.005
-    this.x += Math.cos(this.angle) * 0.1
-    this.y += Math.sin(this.angle) * 0.1
-
-    // Mouse follow logic (Stronger attraction)
+    // Harmonic Breathing/Wobble (Fluid movement)
+    this.angle += 0.015
+    const waveX = Math.sin(this.angle * 0.8) * 3
+    const waveY = Math.cos(this.angle * 1.2) * 3
+    
+    // Mouse interaction with Easing
     const dx = mouse.x - this.x
     const dy = mouse.y - this.y
     const distance = Math.sqrt(dx * dx + dy * dy)
     
-    if (distance < 400) {
-      const force = (400 - distance) / 400
-      this.x += dx * force * 0.05 // Increased pull speed
-      this.y += dy * force * 0.05
-    } else {
-      // Gently drift back to "home" position
-      this.x += (this.baseX - this.x) * 0.02
-      this.y += (this.baseY - this.y) * 0.02
+    // Base Target is the home position plus the wave displacement
+    let targetX = this.baseX + waveX
+    let targetY = this.baseY + waveY
+
+    if (distance < 350) {
+      const force = (350 - distance) / 350
+      // Shift target slightly towards mouse (limited range, high smoothness)
+      targetX += dx * force * 0.15
+      targetY += dy * force * 0.15
+      
+      // Increase wave intensity near mouse for 'excitement'
+      targetX += Math.sin(this.angle * 3) * force * 5
+      targetY += Math.cos(this.angle * 3) * force * 5
     }
+
+    // Smooth Interpolation (The "Lubrication" feel)
+    const easing = 0.04
+    this.x += (targetX - this.x) * easing
+    this.y += (targetY - this.y) * easing
+    
+    // Rotation drift
+    this.rotation += 0.005
   }
 
   draw() {

@@ -1,15 +1,17 @@
 <template>
-  <div class="bg-slate-50 pb-32">
+  <div class="bg-white pb-32">
     <!-- Header -->
-    <section class="relative py-32 overflow-hidden bg-white">
-      <div class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
-           style="background-image: radial-gradient(#0088cc 1px, transparent 1px); background-size: 32px 32px;"></div>
-      
-      <div class="container mx-auto px-6 max-w-5xl relative z-10 text-center" ref="headerRef" :class="[headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8', 'transition-all duration-700 ease-out']">
-        <div class="inline-flex items-center space-x-2 bg-blue-50 text-accent px-4 py-1.5 rounded-full text-xs font-bold mb-8 border border-blue-100">
-          <span>匠心交付 · 行业标杆</span>
+    <section class="relative py-36 overflow-hidden bg-white">
+      <div class="absolute inset-0 z-0 opacity-[0.04] pointer-events-none"
+           style="background-image: radial-gradient(#2563eb 1px, transparent 1px); background-size: 32px 32px;"></div>
+      <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-blue-100 rounded-full blur-3xl opacity-40 pointer-events-none"></div>
+
+      <div class="container mx-auto px-6 max-w-5xl relative z-10 text-center reveal" ref="headerRef">
+        <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-600 px-5 py-2 rounded-full text-xs font-bold mb-10 border border-blue-100 uppercase tracking-widest">
+          <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse inline-block"></span>
+          匠心交付 · 行业标杆
         </div>
-        <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 mb-8 tracking-tight">卓越交付，有迹可循</h1>
+        <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 mb-8 tracking-tight leading-[1.05]">卓越交付，<span class="gradient-text">有迹可循</span></h1>
         <p class="text-lg md:text-xl text-slate-500 font-medium max-w-3xl mx-auto leading-relaxed">
           浏览我们为全球领先企业构建的数字化案例。从极致的前端视觉到稳如磐石的系统底层，每一处细节皆是专业工程化的落地展现。
         </p>
@@ -17,33 +19,43 @@
     </section>
 
     <!-- Cases Grid -->
-    <section class="container mx-auto px-6 max-w-7xl mt-24" ref="gridRef" :class="[gridVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20', 'transition-all duration-1000 ease-out delay-100']">
+    <section class="container mx-auto px-6 max-w-7xl mt-8">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
-        
-        <div v-for="(project, i) in cases" :key="i" class="group cursor-pointer">
-          <div class="relative overflow-hidden rounded-3xl aspect-[16/10] mb-8 border border-slate-200 shadow-sm group-hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-700">
-            <img :src="project.image" :alt="project.title" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s] ease-out">
-            <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-700"></div>
-            
-            <div class="absolute top-6 left-6 flex space-x-2">
-              <span v-for="tag in project.tags" :key="tag" class="bg-white/90 backdrop-blur-md text-slate-800 px-4 py-1.5 rounded-full text-xs font-bold shadow-sm">
+
+        <div v-for="(project, i) in cases" :key="i"
+             class="group cursor-pointer reveal"
+             :style="{ transitionDelay: `${i * 100}ms` }">
+          <div class="relative overflow-hidden rounded-3xl aspect-[16/10] mb-8 border border-slate-100 shadow-sm
+                      group-hover:shadow-[0_25px_60px_-12px_rgba(0,0,0,0.15)] transition-all duration-700">
+            <img :src="project.image" :alt="project.title"
+                 class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s] ease-out">
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <!-- Tags -->
+            <div class="absolute top-5 left-5 flex gap-2">
+              <span v-for="tag in project.tags" :key="tag"
+                    class="bg-white/90 backdrop-blur-md text-slate-800 px-3.5 py-1 rounded-full text-xs font-bold shadow-sm">
                 {{ tag }}
               </span>
             </div>
+            <!-- Case number -->
+            <div class="absolute bottom-5 right-5 text-white/30 font-black text-5xl leading-none group-hover:text-white/60 transition-colors duration-500 select-none">
+              0{{ i + 1 }}
+            </div>
           </div>
-          
-          <div class="flex items-center text-xs font-bold text-accent mb-3 tracking-widest uppercase">
-            {{ project.industry }}
-          </div>
-          <h3 class="text-2xl font-bold mb-4 text-slate-900 group-hover:text-accent transition-colors tracking-tight">{{ project.title }}</h3>
+
+          <div class="text-[11px] font-bold text-blue-500 mb-3 tracking-[0.18em] uppercase">{{ project.industry }}</div>
+          <h3 class="text-2xl font-bold mb-3 text-slate-900 group-hover:text-accent transition-colors tracking-tight leading-snug">{{ project.title }}</h3>
           <p class="text-base text-slate-500 leading-relaxed font-medium">{{ project.summary }}</p>
         </div>
 
       </div>
-      
-      <div class="mt-24 text-center">
-        <router-link to="/contact" class="inline-flex items-center px-8 py-4 bg-accent text-white rounded-xl font-bold hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg">
+
+      <div class="mt-24 text-center reveal">
+        <router-link to="/contact"
+          class="inline-flex items-center px-10 py-5 bg-gray-900 text-white rounded-2xl font-bold hover:bg-accent transition-all shadow-lg hover:shadow-blue-200/50 transform hover:-translate-y-1 text-lg gap-3">
           开启专业评估与方案架构
+          <span class="text-xl">→</span>
         </router-link>
       </div>
     </section>
@@ -51,20 +63,18 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { useIntersectionObserver } from '@vueuse/core'
+import { ref, onMounted } from 'vue'
+
+onMounted(() => {
+  const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right')
+  const observer = new IntersectionObserver(
+    (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') }),
+    { threshold: 0.1 }
+  )
+  els.forEach(el => observer.observe(el))
+})
 
 const headerRef = ref(null)
-const headerVisible = ref(false)
-useIntersectionObserver(headerRef, ([{ isIntersecting }]) => {
-  if (isIntersecting) headerVisible.value = true
-})
-
-const gridRef = ref(null)
-const gridVisible = ref(false)
-useIntersectionObserver(gridRef, ([{ isIntersecting }]) => {
-  if (isIntersecting) gridVisible.value = true
-})
 
 const cases = [
   {
@@ -75,7 +85,7 @@ const cases = [
     image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200'
   },
   {
-    title: '数字驱动金融创新：海某独角兽持牌机构官网及交易大厅',
+    title: '数字驱动金融创新：某独角兽持牌机构官网及交易大厅',
     summary: '极简且稳重的高端视觉语言融合复杂的金融数据计算逻辑，支持多端数据实时下发。其系统稳定性达到了惊人的 99.999%。',
     industry: '金融科技',
     tags: ['PC官网', '数据大屏', '安全防御'],

@@ -10,6 +10,7 @@
       </div>
       
       <nav class="flex flex-wrap justify-center gap-8 text-sm text-gray-500 font-medium font-sans">
+        <router-link to="/" class="hover:text-accent transition-colors">首页</router-link>
         <router-link to="/solutions" class="hover:text-accent transition-colors">解决方案</router-link>
         <router-link to="/cases" class="hover:text-accent transition-colors">成功案例</router-link>
         <router-link to="/about" class="hover:text-accent transition-colors">关于团队</router-link>
