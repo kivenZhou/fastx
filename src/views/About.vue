@@ -11,7 +11,7 @@
           {{ $t('about.badge') }}
         </div>
         <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 mb-8 tracking-tight leading-[1.05]">
-          {{ $t('about.title1') }}<span class="gradient-text">{{ $t('about.title_gradient') }}</span>
+          {{ $t('about.title1') }} <span class="gradient-text">{{ $t('about.title_gradient') }}</span>
         </h1>
         <p class="text-lg md:text-xl text-slate-500 font-medium max-w-3xl mx-auto leading-relaxed">
           {{ $t('about.desc') }}

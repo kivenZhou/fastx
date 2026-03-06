@@ -11,7 +11,7 @@
           {{ $t('solutions.badge') }}
         </div>
         <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 mb-8 tracking-tight leading-[1.05]">
-          {{ $t('solutions.title1') }}<span class="gradient-text">{{ $t('solutions.title_gradient') }}</span>
+          {{ $t('solutions.title1') }} <span class="gradient-text">{{ $t('solutions.title_gradient') }}</span>
         </h1>
         <p class="text-lg md:text-xl text-slate-500 font-medium max-w-3xl mx-auto leading-relaxed">
           {{ $t('solutions.desc') }}
@@ -31,7 +31,7 @@
           <p class="text-lg text-slate-500 leading-relaxed mb-8">{{ $t('solutions.web_desc') }}</p>
           <ul class="space-y-4 mb-10 text-slate-700">
             <li v-for="(item, i) in $tm('solutions.web_items')" :key="i" class="flex items-center gap-3">
-              <span class="w-2 h-2 rounded-full bg-blue-500 shrink-0"></span>{{ rt(item) }}
+              <span class="w-2 h-2 rounded-full bg-blue-500 shrink-0"></span> {{ rt(item) }}
             </li>
           </ul>
         </div>
@@ -51,7 +51,7 @@
           <p class="text-lg text-slate-500 leading-relaxed mb-8">{{ $t('solutions.app_desc') }}</p>
           <ul class="space-y-4 mb-10 text-slate-700">
             <li v-for="(item, i) in $tm('solutions.app_items')" :key="i" class="flex items-center gap-3">
-              <span class="w-2 h-2 rounded-full bg-indigo-500 shrink-0"></span>{{ rt(item) }}
+              <span class="w-2 h-2 rounded-full bg-indigo-500 shrink-0"></span> {{ rt(item) }}
             </li>
           </ul>
         </div>
@@ -71,7 +71,7 @@
           <p class="text-lg text-slate-500 leading-relaxed mb-8">{{ $t('solutions.mini_desc') }}</p>
           <ul class="space-y-4 mb-10 text-slate-700">
             <li v-for="(item, i) in $tm('solutions.mini_items')" :key="i" class="flex items-center gap-3">
-              <span class="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>{{ rt(item) }}
+              <span class="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span> {{ rt(item) }}
             </li>
           </ul>
         </div>
@@ -91,7 +91,7 @@
           <p class="text-lg text-slate-500 leading-relaxed mb-8">{{ $t('solutions.sys_desc') }}</p>
           <ul class="space-y-4 mb-10 text-slate-700">
             <li v-for="(item, i) in $tm('solutions.sys_items')" :key="i" class="flex items-center gap-3">
-              <span class="w-2 h-2 rounded-full bg-orange-500 shrink-0"></span>{{ rt(item) }}
+              <span class="w-2 h-2 rounded-full bg-orange-500 shrink-0"></span> {{ rt(item) }}
             </li>
           </ul>
         </div>

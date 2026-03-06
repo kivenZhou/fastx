@@ -17,7 +17,7 @@
           {{ $t('home.title1') }}<br><span class="gradient-text text-5xl md:text-7xl lg:text-[5.5rem] font-black">{{ $t('home.title2') }}</span>
         </h1>
         <p class="max-w-2xl mx-auto text-xl md:text-2xl text-gray-500 mb-14 leading-relaxed font-medium">
-          {{ $t('home.desc') }}<span class="text-gray-900 font-bold italic">{{ $t('home.desc_instant') }}</span>{{ $t('home.desc_and') }}<span class="text-gray-900 font-bold italic">{{ $t('home.desc_certain') }}</span>{{ $t('home.desc_end') }}
+          {{ $t('home.desc') }} <span class="text-gray-900 font-bold italic">{{ $t('home.desc_instant') }}</span> {{ $t('home.desc_and') }} <span class="text-gray-900 font-bold italic">{{ $t('home.desc_certain') }}</span> {{ $t('home.desc_end') }}
         </p>
         <div class="flex flex-wrap justify-center gap-6">
           <a href="#services" class="px-10 py-5 bg-gray-900 text-white rounded-2xl font-bold text-lg hover:shadow-2xl transition-all transform hover:-translate-y-1">
@@ -46,12 +46,12 @@
           <div class="md:col-span-2 md:row-span-2 glass-card rounded-[2.5rem] overflow-hidden group cursor-pointer p-2">
             <div class="h-full w-full rounded-[2rem] overflow-hidden relative">
               <img :src="portfolioImages[0]" class="w-full h-full object-cover transition-premium group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent p-12 flex flex-col justify-end">
-                <div class="flex gap-2 mb-4">
+              <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent p-6 md:p-12 flex flex-col justify-end">
+                <div class="flex flex-wrap gap-2 mb-3 md:mb-4">
                   <span v-for="tag in portfolioTags[0]" :key="tag" class="text-[10px] font-bold px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white border border-white/20 capitalize">{{ tag }}</span>
                 </div>
-                <h3 class="text-3xl font-bold text-white mb-2">{{ $t('home.portfolio_items[0].title') }}</h3>
-                <p class="text-gray-300 text-lg">{{ $t('home.portfolio_items[0].desc') }}</p>
+                <h3 class="text-lg md:text-3xl font-bold text-white mb-1 md:mb-2">{{ $t('home.portfolio_items[0].title') }}</h3>
+                <p class="text-gray-300 text-xs md:text-lg leading-tight md:leading-normal">{{ $t('home.portfolio_items[0].desc') }}</p>
               </div>
             </div>
           </div>
@@ -60,12 +60,12 @@
           <div v-for="(img, i) in portfolioImages.slice(1)" :key="i" class="md:col-span-2 glass-card rounded-[2.5rem] overflow-hidden group cursor-pointer p-2">
             <div class="h-full w-full rounded-[2rem] overflow-hidden relative">
               <img :src="img" class="w-full h-full object-cover transition-premium group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent p-10 flex flex-col justify-end">
-                <div class="flex gap-2 mb-4">
+              <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent p-5 md:p-10 flex flex-col justify-end">
+                <div class="flex flex-wrap gap-2 mb-2 md:mb-4">
                   <span v-for="tag in portfolioTags[i+1]" :key="tag" class="text-[10px] font-bold px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white border border-white/20 capitalize">{{ tag }}</span>
                 </div>
-                <h3 class="text-2xl font-bold text-white mb-2">{{ $t(`home.portfolio_items[${i+1}].title`) }}</h3>
-                <p class="text-gray-300">{{ $t(`home.portfolio_items[${i+1}].desc`) }}</p>
+                <h3 class="text-base md:text-2xl font-bold text-white mb-1 md:mb-2">{{ $t(`home.portfolio_items[${i+1}].title`) }}</h3>
+                <p class="text-gray-300 text-xs md:text-base leading-tight md:leading-normal">{{ $t(`home.portfolio_items[${i+1}].desc`) }}</p>
               </div>
             </div>
           </div>
@@ -136,7 +136,7 @@
 
       <div class="max-w-4xl mx-auto text-center relative z-10 reveal-section">
         <h2 class="text-4xl md:text-6xl font-bold mb-8 tracking-tight leading-tight text-white">
-          {{ $t('home.cta_title1') }}<span class="gradient-text">{{ $t('home.cta_title_gradient') }}</span>{{ $t('home.cta_title2') }}
+          {{ $t('home.cta_title1') }} <span class="gradient-text">{{ $t('home.cta_title_gradient') }}</span> {{ $t('home.cta_title2') }}
         </h2>
         <p class="mb-14 text-blue-100/70 text-xl max-w-2xl mx-auto font-medium leading-relaxed">
           {{ $t('home.cta_desc') }}
