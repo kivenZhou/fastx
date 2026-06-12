@@ -1,4 +1,9 @@
 <script setup>
+/**
+ * @author: zhongyu
+ * @date: 2026-06-12
+ * @description: 主应用
+ */
 import PageBackground from './components/PageBackground.vue'
 import SiteHeader from './components/SiteHeader.vue'
 import HeroSection from './components/HeroSection.vue'
