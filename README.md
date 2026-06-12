@@ -50,4 +50,10 @@ git commit -m "chore: update installers"
 git push
 ```
 
-`npm run dev` / `npm run build` 会自动尝试同步；若 `trae-accounts/release/` 不存在会提示先构建。
+`npm run dev` 会尝试从 `trae-accounts/release/` 同步（本地发版用）；**CI 构建不跑同步**，直接用仓库里已提交的 `public/downloads/`。
+
+Cloudflare Pages 等 CI 若使用 Git LFS，构建命令需加上 LFS 拉取，例如：
+
+```bash
+git lfs install && git lfs pull && npm install && npm run build
+```
