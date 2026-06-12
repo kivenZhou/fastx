@@ -435,6 +435,7 @@ class App {
   screen!: { width: number; height: number };
   viewport!: { width: number; height: number };
   raf: number = 0;
+  visible: boolean = true;
 
   boundOnResize!: () => void;
   boundOnWheel!: (e: Event) => void;
@@ -491,8 +492,8 @@ class App {
 
   createGeometry() {
     this.planeGeometry = new Plane(this.gl, {
-      heightSegments: 50,
-      widthSegments: 100
+      heightSegments: 16,
+      widthSegments: 32
     });
   }
 
@@ -628,14 +629,20 @@ class App {
     }
   }
 
+  setVisible(visible: boolean) {
+    this.visible = visible;
+  }
+
   update() {
-    this.scroll.current = lerp(this.scroll.current, this.scroll.target, this.scroll.ease);
-    const direction = this.scroll.current > this.scroll.last ? 'right' : 'left';
-    if (this.medias) {
-      this.medias.forEach(media => media.update(this.scroll, direction));
+    if (this.visible) {
+      this.scroll.current = lerp(this.scroll.current, this.scroll.target, this.scroll.ease);
+      const direction = this.scroll.current > this.scroll.last ? 'right' : 'left';
+      if (this.medias) {
+        this.medias.forEach(media => media.update(this.scroll, direction));
+      }
+      this.renderer.render({ scene: this.scene, camera: this.camera });
+      this.scroll.last = this.scroll.current;
     }
-    this.renderer.render({ scene: this.scene, camera: this.camera });
-    this.scroll.last = this.scroll.current;
     this.raf = window.requestAnimationFrame(this.update.bind(this));
   }
 
@@ -677,6 +684,8 @@ class App {
   }
 }
 
+let visibilityObserver: IntersectionObserver | null = null;
+
 onMounted(() => {
   if (!containerRef.value) return;
 
@@ -689,9 +698,17 @@ onMounted(() => {
     scrollSpeed: props.scrollSpeed,
     scrollEase: props.scrollEase
   });
+
+  visibilityObserver = new IntersectionObserver(
+    ([entry]) => app?.setVisible(entry?.isIntersecting ?? false),
+    { rootMargin: '100px' }
+  );
+  visibilityObserver.observe(containerRef.value);
 });
 
 onUnmounted(() => {
+  visibilityObserver?.disconnect();
+  visibilityObserver = null;
   if (app) {
     app.destroy();
     app = null;

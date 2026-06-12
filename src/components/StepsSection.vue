@@ -33,7 +33,6 @@ const colors = [
             :border-radius="20"
             :colors="colors[idx]"
             background-color="#0a0c14"
-            :animated="idx === 1"
             class-name="h-full"
           >
             <div class="p-7 sm:p-8 h-full">

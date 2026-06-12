@@ -4,7 +4,6 @@ import { Download } from 'lucide-vue-next'
 import { DOWNLOADS } from '../config'
 import SectionHeader from './SectionHeader.vue'
 import FadeContent from './bits/FadeContent.vue'
-import BorderGlow from './bits/BorderGlow.vue'
 
 const { t } = useI18n()
 
@@ -37,28 +36,21 @@ const platforms = Object.entries(DOWNLOADS).map(([key, p]) => ({
           :delay="i * 100"
           :threshold="0.15"
         >
-          <BorderGlow
-            :border-radius="20"
-            :colors="p.colors"
-            background-color="#0a0c14"
-            :animated="i === 0"
-            class-name="h-full group"
+          <a
+            :href="p.url"
+            :target="p.external ? '_blank' : undefined"
+            :rel="p.external ? 'noopener noreferrer' : undefined"
+            class="hover-card block h-full p-6 sm:p-7 text-center no-underline text-inherit"
+            :style="{ '--card-accent': p.colors[0] }"
           >
-            <a
-              :href="p.url"
-              :target="p.external ? '_blank' : undefined"
-              :rel="p.external ? 'noopener noreferrer' : undefined"
-              class="block h-full p-6 sm:p-7 text-center no-underline text-inherit transition-transform group-hover:scale-[1.01]"
-            >
-              <div class="text-4xl mb-4">{{ p.emoji }}</div>
-              <h3 class="font-semibold text-white text-lg mb-1">{{ t(p.labelKey) }}</h3>
-              <p class="text-sm text-[#6b7280] mb-6">{{ t(p.hintKey) }}</p>
-              <span class="btn-primary !w-full !text-sm !py-2.5">
-                <Download :size="16" />
-                {{ t('download.btn') }}
-              </span>
-            </a>
-          </BorderGlow>
+            <div class="text-4xl mb-4">{{ p.emoji }}</div>
+            <h3 class="font-semibold text-white text-lg mb-1">{{ t(p.labelKey) }}</h3>
+            <p class="text-sm text-[#6b7280] mb-6">{{ t(p.hintKey) }}</p>
+            <span class="btn-primary !w-full !text-sm !py-2.5">
+              <Download :size="16" />
+              {{ t('download.btn') }}
+            </span>
+          </a>
         </FadeContent>
       </div>
 

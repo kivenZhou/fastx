@@ -306,8 +306,8 @@ const setup = () => {
   const camera = new OrthographicCamera(-1, 1, 1, -1, 0, 1);
   camera.position.z = 1;
 
-  const renderer = new WebGLRenderer({ antialias: true, alpha: false });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  const renderer = new WebGLRenderer({ antialias: false, alpha: false });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
   renderer.domElement.style.width = '100%';
   renderer.domElement.style.height = '100%';
   containerRef.value.appendChild(renderer.domElement);
@@ -437,28 +437,38 @@ const setup = () => {
   }
 
   let raf = 0;
+  let paused = document.hidden;
+
+  const handleVisibility = () => {
+    paused = document.hidden;
+  };
+  document.addEventListener('visibilitychange', handleVisibility);
+
   const renderLoop = () => {
-    uniforms.iTime.value = clock.getElapsedTime();
+    if (!paused) {
+      uniforms.iTime.value = clock.getElapsedTime();
 
-    if (props.interactive) {
-      currentMouseRef.value.lerp(targetMouseRef.value, props.mouseDamping);
-      uniforms.iMouse.value.copy(currentMouseRef.value);
+      if (props.interactive) {
+        currentMouseRef.value.lerp(targetMouseRef.value, props.mouseDamping);
+        uniforms.iMouse.value.copy(currentMouseRef.value);
 
-      currentInfluenceRef.value += (targetInfluenceRef.value - currentInfluenceRef.value) * props.mouseDamping;
-      uniforms.bendInfluence.value = currentInfluenceRef.value;
+        currentInfluenceRef.value += (targetInfluenceRef.value - currentInfluenceRef.value) * props.mouseDamping;
+        uniforms.bendInfluence.value = currentInfluenceRef.value;
+      }
+
+      if (props.parallax) {
+        currentParallaxRef.value.lerp(targetParallaxRef.value, props.mouseDamping);
+        uniforms.parallaxOffset.value.copy(currentParallaxRef.value);
+      }
+
+      renderer.render(scene, camera);
     }
-
-    if (props.parallax) {
-      currentParallaxRef.value.lerp(targetParallaxRef.value, props.mouseDamping);
-      uniforms.parallaxOffset.value.copy(currentParallaxRef.value);
-    }
-
-    renderer.render(scene, camera);
     raf = requestAnimationFrame(renderLoop);
   };
   renderLoop();
 
   cleanup = () => {
+    document.removeEventListener('visibilitychange', handleVisibility);
     cancelAnimationFrame(raf);
     if (ro && containerRef.value) {
       ro.disconnect();

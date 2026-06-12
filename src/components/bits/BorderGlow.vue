@@ -103,7 +103,7 @@ const props = withDefaults(defineProps<BorderGlowProps>(), {
   glowColor: '40 80 80',
   backgroundColor: '#060010',
   borderRadius: 28,
-  glowRadius: 40,
+  glowRadius: 24,
   glowIntensity: 1.0,
   coneSpread: 25,
   animated: false,
@@ -221,7 +221,7 @@ const angleDeg = computed(() => `${cursorAngle.value.toFixed(3)}deg`);
     @pointermove="handlePointerMove"
     @pointerenter="isHovered = true"
     @pointerleave="isHovered = false"
-    :class="`relative grid isolate border border-white/15 ${props.className}`"
+    :class="`relative grid isolate overflow-hidden border border-white/15 ${props.className}`"
     :style="{
       background: props.backgroundColor,
       borderRadius: props.borderRadius + 'px',
@@ -305,7 +305,7 @@ const angleDeg = computed(() => `${cursorAngle.value.toFixed(3)}deg`);
     </span>
 
     <!-- content -->
-    <div class="z-[1] relative flex flex-col overflow-auto">
+    <div class="z-[1] relative flex flex-col overflow-hidden">
       <slot />
     </div>
   </div>

@@ -16,7 +16,6 @@ const items = tm('disclaimer.items')
           :border-radius="20"
           :colors="['#fbbf24', '#f59e0b', '#fb923c']"
           background-color="#0a0c14"
-          :animated="true"
           class-name="w-full"
         >
           <div class="p-8 sm:p-10 text-center">

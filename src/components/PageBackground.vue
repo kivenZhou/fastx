@@ -8,12 +8,11 @@ import FloatingLines from './bits/FloatingLines.vue'
       class="absolute inset-0"
       :lines-gradient="['#818cf8', '#6366f1', '#a78bfa', '#38bdf8']"
       :enabled-waves="['middle', 'bottom']"
-      :line-count="[4, 6]"
+      :line-count="[3, 4]"
       :line-distance="[4, 5]"
-      :animation-speed="0.7"
-      :interactive="true"
-      :parallax="true"
-      :parallax-strength="0.15"
+      :animation-speed="0.5"
+      :interactive="false"
+      :parallax="false"
       mix-blend-mode="screen"
     />
     <div class="absolute inset-0 bg-[#05060a]/80" />
