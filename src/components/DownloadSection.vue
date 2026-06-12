@@ -46,7 +46,7 @@ const platforms = Object.entries(DOWNLOADS).map(([key, p]) => ({
           >
             <a
               :href="p.url"
-              download
+              :download="p.filename"
               class="block h-full p-6 sm:p-7 text-center no-underline text-inherit transition-transform group-hover:scale-[1.01]"
             >
               <div class="text-4xl mb-4">{{ p.emoji }}</div>
