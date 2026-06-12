@@ -1,29 +1,37 @@
-export const APP_VERSION = '0.2.0'
+import { APP_VERSION, DOWNLOAD_FILES, releaseUrl } from './release-meta.js'
 
-const v = APP_VERSION
+export { APP_VERSION, DOWNLOAD_FILES, GITHUB_REPO } from './release-meta.js'
 
-/**
- * 安装包托管在 public/downloads/（由 scripts/sync-downloads.mjs 从 trae-accounts/release 复制）
- * 构建后随 dist/ 一起部署；DMG 使用 Git LFS 存储（单文件 >100MB）
- */
+function downloadUrl(filename) {
+  const env = import.meta.env
+  if (env?.DEV && env.VITE_USE_LOCAL_DOWNLOADS === 'true') {
+    return `/downloads/${filename}`
+  }
+  return releaseUrl(filename)
+}
+
+/** GitHub Releases 托管（Cloudflare Pages 单文件上限 25MB） */
 export const DOWNLOADS = {
   win: {
-    url: `/downloads/Trae-Session-${v}-win-x64.exe`,
-    filename: `Trae-Session-${v}-win-x64.exe`,
+    url: downloadUrl(DOWNLOAD_FILES.win),
+    filename: DOWNLOAD_FILES.win,
+    external: true,
     labelKey: 'download.win',
     hintKey: 'download.winHint',
     icon: 'windows',
   },
   macArm: {
-    url: `/downloads/Trae-Session-${v}-mac-arm64.dmg`,
-    filename: `Trae-Session-${v}-mac-arm64.dmg`,
+    url: downloadUrl(DOWNLOAD_FILES.macArm),
+    filename: DOWNLOAD_FILES.macArm,
+    external: true,
     labelKey: 'download.macArm',
     hintKey: 'download.macArmHint',
     icon: 'apple',
   },
   macX64: {
-    url: `/downloads/Trae-Session-${v}-mac-x64.dmg`,
-    filename: `Trae-Session-${v}-mac-x64.dmg`,
+    url: downloadUrl(DOWNLOAD_FILES.macX64),
+    filename: DOWNLOAD_FILES.macX64,
+    external: true,
     labelKey: 'download.macX64',
     hintKey: 'download.macX64Hint',
     icon: 'apple',

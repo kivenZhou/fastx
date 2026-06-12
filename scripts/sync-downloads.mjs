@@ -5,27 +5,18 @@
 import { copyFileSync, existsSync, mkdirSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { APP_VERSION } from '../src/config.js'
+import { APP_VERSION, DOWNLOAD_FILES } from '../src/release-meta.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
 const releaseDir = join(root, '..', 'trae-accounts', 'release')
 const downloadsDir = join(root, 'public', 'downloads')
 
-/** electron-builder 产物名 → 网站托管名（无空格，URL 友好） */
+/** electron-builder 产物名 → 本地测试用文件名 */
 const ARTIFACTS = [
-  {
-    src: `Trae Session-${APP_VERSION}-win-x64.exe`,
-    dest: `Trae-Session-${APP_VERSION}-win-x64.exe`,
-  },
-  {
-    src: `Trae Session-${APP_VERSION}-mac-arm64.dmg`,
-    dest: `Trae-Session-${APP_VERSION}-mac-arm64.dmg`,
-  },
-  {
-    src: `Trae Session-${APP_VERSION}-mac-x64.dmg`,
-    dest: `Trae-Session-${APP_VERSION}-mac-x64.dmg`,
-  },
+  { src: `Trae Session-${APP_VERSION}-win-x64.exe`, dest: DOWNLOAD_FILES.win },
+  { src: `Trae Session-${APP_VERSION}-mac-arm64.dmg`, dest: DOWNLOAD_FILES.macArm },
+  { src: `Trae Session-${APP_VERSION}-mac-x64.dmg`, dest: DOWNLOAD_FILES.macX64 },
 ]
 
 mkdirSync(downloadsDir, { recursive: true })

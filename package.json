@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "sync:downloads": "node scripts/sync-downloads.mjs",
-    "predev": "npm run sync:downloads",
+    "publish:release": "node scripts/publish-release.mjs",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"

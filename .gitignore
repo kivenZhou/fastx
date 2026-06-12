@@ -11,6 +11,11 @@ node_modules
 dist
 dist-ssr
 *.local
+.release-staging
+
+# 安装包走 GitHub Releases，不随站点部署（Cloudflare Pages 单文件上限 25MB）
+public/downloads/*.exe
+public/downloads/*.dmg
 
 # Editor directories and files
 .vscode/*
