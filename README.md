@@ -19,10 +19,8 @@ npm run build
 
 ## 下载包
 
-将 `trae-accounts/release/` 中的安装包复制到 `public/downloads/`：
+`npm run dev` / `npm run build` 会自动执行 `npm run sync:downloads`，从 `../trae-accounts/release/` 同步安装包到 `public/downloads/`。
 
-- `Trae Session-0.2.0-win-x64.exe`
-- `Trae Session-0.2.0-mac-arm64.dmg`
-- `Trae Session-0.2.0-mac-x64.dmg`
+若安装包不存在，请先在 `trae-accounts` 目录执行 `npm run dist:all` 构建。
 
-或修改 `src/config.js` 中的 `DOWNLOADS` 链接为 GitHub Releases 地址。
+也可修改 `src/config.js` 中的 `DOWNLOADS` 链接为 GitHub Releases 地址。
