@@ -1,7 +1,7 @@
 {
-  "name": "website",
+  "name": "trae-session-site",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.2.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,19 +13,17 @@
     "@fontsource/jetbrains-mono": "^5.2.8",
     "@vueuse/core": "^14.2.1",
     "lucide-vue-next": "^0.576.0",
+    "motion-v": "^2.3.0",
+    "ogl": "^1.0.11",
+    "three": "^0.172.0",
     "vue": "^3.5.25",
     "vue-i18n": "^9.14.5"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.2.1",
     "@vitejs/plugin-vue": "^6.0.2",
-    "autoprefixer": "^10.4.27",
-    "axios": "^1.13.6",
-    "postcss": "^8.5.8",
-    "sass": "^1.97.3",
     "tailwindcss": "^4.2.1",
-    "vite": "^8.0.0-beta.13",
-    "vue-router": "^4.6.4"
+    "vite": "^8.0.0-beta.13"
   },
   "overrides": {
     "vite": "^8.0.0-beta.13"

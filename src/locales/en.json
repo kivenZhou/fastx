@@ -1,196 +1,194 @@
 {
   "nav": {
-    "home": "Home",
-    "solutions": "Solutions",
-    "cases": "Cases",
-    "about": "About",
-    "contact": "Contact",
-    "cta": "Book a Consultation"
+    "download": "Download",
+    "features": "Features",
+    "start": "Quick Start",
+    "tutorial": "Tutorial",
+    "faq": "FAQ"
+  },
+  "hero": {
+    "badge": "v{version} · Local session manager",
+    "title1": "Multiple Trae accounts,",
+    "title2": "one-click switch",
+    "subtitle": "For developers and teams with multiple legitimate Trae accounts. Manual switching, all data stays local — no repeated logins.",
+    "ctaDownload": "Download",
+    "ctaTutorial": "View tutorial",
+    "stat1Value": "Local",
+    "stat1Label": "No cloud upload",
+    "stat2Value": "Manual",
+    "stat2Label": "One-click switch",
+    "stat3Value": "2 platforms",
+    "stat3Label": "macOS & Windows"
+  },
+  "download": {
+    "label": "Download",
+    "title": "Download client",
+    "subtitle": "Pick your OS, install, and open the app",
+    "win": "Windows",
+    "winHint": "64-bit · Windows 10+",
+    "macArm": "macOS",
+    "macArmHint": "Apple Silicon · M series",
+    "macX64": "macOS",
+    "macX64Hint": "Intel · x86_64",
+    "btn": "Download",
+    "macNote": "macOS: if blocked as “damaged”, run in Terminal:",
+    "macCmd": "sudo xattr -rd com.apple.quarantine /Applications/Trae\\ Session.app",
+    "source": "Or build from source:",
+    "sourceCmd": "cd trae-accounts && npm install && npm start"
+  },
+  "features": {
+    "label": "Features",
+    "title": "Built for Trae multi-account",
+    "subtitle": "Let Trae Session handle sessions — you focus on code",
+    "galleryHint": "Drag or scroll to explore features",
+    "items": {
+      "switch": {
+        "icon": "🔄",
+        "title": "Manual one-click switch",
+        "desc": "Switch accounts in one click: Trae restarts with the new session. Work, personal, and client accounts without re-login."
+      },
+      "local": {
+        "icon": "🔒",
+        "title": "Local-only data",
+        "desc": "Accounts, tokens, and cookies stay on your machine. We do not run any backend server."
+      },
+      "login": {
+        "icon": "🌐",
+        "title": "Browser login",
+        "desc": "Embedded login supports 2FA and OAuth — safer than copying tokens by hand."
+      },
+      "usage": {
+        "icon": "📊",
+        "title": "Usage monitor (optional)",
+        "desc": "View API usage and remaining quota per account — informational only, not tied to switching."
+      },
+      "backup": {
+        "icon": "💾",
+        "title": "Encrypted export",
+        "desc": "AES-256-GCM encrypted backups with notes, groups, and optional auto-backup."
+      },
+      "tray": {
+        "icon": "📌",
+        "title": "System tray",
+        "desc": "Quick manual switch from the menu bar or tray without breaking your flow."
+      }
+    }
+  },
+  "notDo": {
+    "title": "What this tool does NOT do",
+    "items": [
+      "Auto-switch when quota runs out",
+      "Upload credentials or chats to any server",
+      "Proxy or intercept Trae API traffic",
+      "Bulk register, resell, or share accounts"
+    ]
+  },
+  "steps": {
+    "label": "Get Started",
+    "title": "Three steps to start",
+    "subtitle": "Install and manage your Trae accounts",
+    "items": {
+      "1": {
+        "title": "Download & install",
+        "desc": "Download the installer above, launch Trae Session, and accept the disclaimer."
+      },
+      "2": {
+        "title": "Add accounts",
+        "desc": "Browser login is recommended; or paste a token or import from Trae IDE. Confirm Trae path in Settings."
+      },
+      "3": {
+        "title": "Switch",
+        "desc": "Click Switch on an account card. Trae closes and reopens with that session. Save unsaved work first."
+      }
+    }
+  },
+  "tutorial": {
+    "label": "Tutorial",
+    "title": "How to use",
+    "subtitle": "Add accounts, switch sessions, and back up",
+    "sections": {
+      "install": {
+        "title": "1 Install Trae Session",
+        "items": [
+          "Download the installer for your platform",
+          "Accept the disclaimer on first launch",
+          "If Trae is not found, set the executable path in Settings"
+        ],
+        "tip": "Intel Mac: x64 build. Apple Silicon: arm64 build."
+      },
+      "add": {
+        "title": "2 Add accounts",
+        "items": [
+          "Browser login (recommended): Add → Browser login",
+          "Paste token from Trae devtools",
+          "Import current session from Trae IDE"
+        ],
+        "tip": "Use notes and groups to organize by project or client."
+      },
+      "switch": {
+        "title": "3 Switch accounts",
+        "items": [
+          "Click Switch on the target account",
+          "Trae Session closes Trae, writes session files and device ID",
+          "Trae IDE restarts logged in as that account"
+        ],
+        "warn": "Save unsaved code before switching — Trae will restart."
+      },
+      "advanced": {
+        "title": "4 Advanced: reset environment",
+        "items": [
+          "Only when sessions are corrupted",
+          "Clears cache, preferences, and resets device IDs",
+          "May trigger platform risk controls or violate ToS — use with care"
+        ],
+        "tip": "For daily use, prefer normal Switch."
+      },
+      "backup": {
+        "title": "5 Backup & export",
+        "items": [
+          "Enable auto local backup in Settings",
+          "Export with optional AES encryption",
+          "Import on a new machine to restore accounts"
+        ]
+      }
+    }
+  },
+  "privacy": {
+    "title": "Data & privacy",
+    "items": {
+      "store": { "label": "Account store", "value": "electron-store (app user data)" },
+      "session": { "label": "Trae session", "value": "Written to Trae App Support on switch" },
+      "mac": { "label": "macOS path", "value": "~/Library/Application Support/trae-accounts/" },
+      "win": { "label": "Windows path", "value": "%APPDATA%\\trae-accounts\\" }
+    }
+  },
+  "faq": {
+    "label": "FAQ",
+    "title": "FAQ",
+    "items": {
+      "q1": { "q": "Trae did not reopen after switch?", "a": "Check Trae path in Settings. Try auto-scan or pick the executable manually." },
+      "q2": { "q": "Invalid token when adding?", "a": "Ensure the token is complete and not expired. Prefer browser login or cookie refresh." },
+      "q3": { "q": "Trae still shows the old account?", "a": "Close Trae manually, then use Environment clean or Reset & switch in Trae Session." },
+      "q4": { "q": "Is data uploaded?", "a": "No. Everything stays on your machine. Trae Session does not use our servers." },
+      "q5": { "q": "Linux support?", "a": "macOS and Windows only, matching Trae IDE." },
+      "q6": { "q": "Any risks?", "a": "May violate Trae ToS. Use only accounts you own. You assume all risks." },
+      "q7": { "q": "How to backup?", "a": "Encrypted export or auto backup in Settings. Keep your password and files safe." }
+    }
+  },
+  "disclaimer": {
+    "title": "Disclaimer",
+    "items": [
+      "For accounts you own and registered legitimately under Trae terms",
+      "All data stored locally — no remote upload",
+      "Manual switching only — no auto-rotate on quota exhaustion",
+      "Advanced features may trigger platform risk controls",
+      "You assume all risks including account suspension"
+    ],
+    "accept": "Using the client means you accept these terms"
   },
   "footer": {
-    "tagline": "Infinite Logic, Instant Delivery.",
-    "copyright": "© 2026 FastX Technology Studio. Designed for Enterprises."
-  },
-  "home": {
-    "badge": "Next-Gen Enterprise Tech Delivery Experts",
-    "title1": "Engineering Excellence for Instant Delivery",
-    "title2": "Build the Digital Future",
-    "desc": "At FastX.ink, we harness cutting-edge engineering expertise to deliver",
-    "desc_instant": "instant",
-    "desc_and": "and",
-    "desc_certain": "certain",
-    "desc_end": "outcomes for global businesses.",
-    "cta_start": "Start Your Project",
-    "cta_portfolio": "View Our Work",
-    "portfolio_title": "Selected Deliveries",
-    "portfolio_sub": "High-performance digital products built on the FastX engineering principles.",
-    "services_title": "Full-Stack Tech Capabilities",
-    "services_sub": "Built on 2026's leading tech stack — elastic, scalable digital assets for your business.",
-    "process_sub": "We simplify complex development into four intuitive delivery phases.",
-    "faq_title": "Frequently Asked Questions",
-    "cta_title1": "Ready to launch your",
-    "cta_title_gradient": "Digital Blueprint",
-    "cta_title2": "?",
-    "cta_desc": "Contact our lead tech experts at FastX.ink for a bespoke architecture advisory.",
-    "cta_email": "Email hi{'@'}fastx.ink",
-    "cta_book": "Book a Call",
-    "portfolio_items": [
-      {
-        "title": "Smart Logistics Dispatch Management System",
-        "desc": "A custom automated logistics platform for a global enterprise, reducing labor costs by 30%."
-      },
-      {
-        "title": "Community 15-Minute Living Circle App",
-        "desc": "Silky-smooth native experience with integrated maps and instant payment functionality."
-      },
-      {
-        "title": "Private Domain New Retail Mini-Program",
-        "desc": "High-concurrency architecture supporting millions of DAUs, driving digital brand growth."
-      }
-    ],
-    "services_items": [
-      {
-        "name": "Web Portals & Admin Systems",
-        "desc": "Using Next.js SSR technology for lightning-fast load times and superior SEO performance."
-      },
-      {
-        "name": "Multi-Platform App Development",
-        "desc": "One Flutter codebase for iOS and Android — reduced costs with native-quality interactions."
-      },
-      {
-        "name": "SaaS & Cloud-Native Architecture",
-        "desc": "Deep expertise in Docker/Kubernetes deployments for elastic, scalable backend infrastructure."
-      }
-    ],
-    "steps_items": [
-      {
-        "title": "Deep Strategy Consulting",
-        "desc": "Map core logic, produce PRD and technical feasibility reports. No blind starts."
-      },
-      {
-        "title": "Instant Architecture Prototype",
-        "desc": "High-fidelity UI and interactive prototypes within 48 hours for rapid direction confirmation."
-      },
-      {
-        "title": "Kanban-Style Development",
-        "desc": "Clients monitor Git commits and test progress in real time. Full transparency throughout."
-      },
-      {
-        "title": "Full-Lifecycle After-Sales",
-        "desc": "Source code delivery, documentation handover, and one year of system stability support."
-      }
-    ],
-    "faqs_items": [
-      {
-        "question": "Do you provide full source code after delivery?",
-        "answer": "Yes. FastX.ink commits to a complete handover of Git repository access, deployment scripts, and all technical documentation — no technical lock-in."
-      },
-      {
-        "question": "Can the system scale if our business grows?",
-        "answer": "Absolutely. Our 'Instant Architecture' is container-native, supporting elastic scaling. From 1,000 to 100,000 DAUs, scalability is built-in."
-      },
-      {
-        "question": "How do you price your services?",
-        "answer": "We use tiered fixed-price quotes based on feature complexity and estimated hours. No low-ball entry with hidden costs later."
-      }
-    ]
-  },
-  "solutions": {
-    "badge": "Full-Spectrum Digital Tech Delivery Matrix",
-    "title1": "Our",
-    "title_gradient": "Solutions",
-    "desc": "From backend architecture to end-side interactions, we build complete digital assets to the highest engineering standards.",
-    "web_title": "Enterprise PC Websites & Admin Platforms",
-    "web_desc": "Command attention on the desktop. Expert in Vue/React with SSR for blazing-fast first screens and excellent SEO.",
-    "web_items": ["Premium Interactive Responsive Websites", "B2B / B2C Large-Scale E-Commerce Platforms", "Complex Data Visualization Dashboards", "Custom ERP / CRM Internal Management Systems"],
-    "app_title": "Mobile Apps (iOS & Android)",
-    "app_desc": "Infinite possibilities at your fingertips. Cross-platform or native, delivering 60fps experiences across all devices.",
-    "app_items": ["Swift & Kotlin Native App Development", "Flutter / React Native High-Performance Hybrid Dev", "IoT Hardware Communication-Level Control Apps", "Audio/Video & Instant Messaging Deep Integration"],
-    "mini_title": "Full-Ecosystem Mini Programs",
-    "mini_desc": "The touchable super-interface. We help you win on WeChat, Alipay, Douyin and more, overcoming size limits with micro-optimizations.",
-    "mini_items": ["Multi-Platform Cloud-Native Infrastructure", "Social Commerce & Viral Growth Engines", "O2O Online-Offline Integrated Solutions"],
-    "sys_title": "Industry Business System Customization (SaaS/ERP)",
-    "sys_desc": "The core skeleton of digital transformation. We build fully custom business systems from database design to UI interaction details.",
-    "sys_items": ["Multi-Tenant SaaS Platform Construction", "Manufacturing ERP & Supply Chain Management", "Private Deployment & Intranet Security Integration", "Third-Party System (DingTalk/Feishu/WeCom) Deep Integration"]
-  },
-  "cases": {
-    "badge": "Masterful Delivery · Industry Benchmark",
-    "title1": "Outstanding Results,",
-    "title_gradient": "Proven Track Record",
-    "desc": "Browse the digital products we've built for world-class enterprises — every detail reflects professional engineering at its finest.",
-    "cta": "Start Your Professional Assessment",
-    "items": [
-      {
-        "title": "Reshaping Global New Retail: A Top Fresh Produce E-Commerce Cloud Ecosystem",
-        "summary": "We rebuilt their high-concurrency user APP and warehouse ERP from scratch — millisecond response at millions of DAUs, 200%+ order efficiency improvement.",
-        "industry": "New Retail / E-Commerce"
-      },
-      {
-        "title": "Digital Financial Innovation: A Unicorn Licensed Institution's Website & Trading Hall",
-        "summary": "A premium, minimalist visual language fused with complex financial data logic, supporting real-time multi-platform data delivery. Achieved 99.999% system stability.",
-        "industry": "FinTech"
-      },
-      {
-        "title": "The Smart Healthcare Super-Gateway: A Top-Tier Hospital's Million-User WeChat Platform",
-        "summary": "We built a seamless payment and report delivery system inside WeChat, winning over millions of patients with age-friendly interaction design.",
-        "industry": "Smart Healthcare"
-      },
-      {
-        "title": "Industry 4.0 Benchmark: A Manufacturer's Cloud IoT Management Hub",
-        "summary": "The digital nervous system for industrial hardware. Via data processing and cloud modeling, managers can view real-time 3D twins of 10,000+ machines from any browser.",
-        "industry": "Industrial Manufacturing"
-      }
-    ]
-  },
-  "about": {
-    "badge": "Building the Digital Drive Engine",
-    "title1": "Tech Delivery That",
-    "title_gradient": "Drives the Future",
-    "desc": "FastX.ink Studio was founded with a singular purpose: to deliver digital assets that truly reshape markets, using world-class software engineering.",
-    "creed": "Our Creed",
-    "vision_title": "An unrelenting pursuit of absolute code quality and minimalist aesthetics.",
-    "vision_p1": "In an era of throwaway software outsourcing, we choose to be different. We believe great code is like a precision V8 engine — built to be fast, stable, and scalable. And UI design is the luxurious interior; it should make you fall in love at first sight.",
-    "vision_p2": "From Silicon Valley architecture thinking to top design systems, we bring the world's best practices to every partner — completely reshaping your digital competitive advantage.",
-    "metric_label": "Years of Industry Experience & Delivery",
-    "team_title": "Our Professional Execution Team",
-    "team_desc": "We're not just developers — we're your business partners. FastX brings together architects with cross-border enterprise experience and principal designers who pursue the perfect balance.",
-    "values_title": "Full-Stack Delivery Capabilities",
-    "values": [
-      { "title": "Cloud-Native Architecture", "desc": "K8s, Docker, CI/CD automated deployment guaranteed." },
-      { "title": "Financial-Grade Security", "desc": "SQL injection prevention, rate limiting, and bidirectional data encryption." },
-      { "title": "Pixel-Perfect Visual Fidelity", "desc": "100% design spec adherence — every curve and whitespace perfected." },
-      { "title": "7x24 Ops Coverage", "desc": "Round-the-clock monitoring with second-level incident response." }
-    ]
-  },
-  "contact": {
-    "badge": "Start a New Chapter of Professional Delivery",
-    "title1": "Start Your",
-    "title_gradient": "Digital Journey",
-    "title2": ".",
-    "desc": "Great products come from deep conversations. Tell us your business needs and our expert team will craft a bespoke technical strategy for you.",
-    "info_title": "Talk Directly to the Technical Core",
-    "info_desc": "Whether you're an early-stage startup or a Fortune 500 seeking a system overhaul — we're always ready.",
-    "enterprise_title": "Enterprise Dedicated Line",
-    "enterprise_desc": "1-on-1 deep consultation with a dedicated account manager. Free technology selection advice and project scheduling.",
-    "form_name": "Your Name",
-    "form_name_placeholder": "e.g. John Smith",
-    "form_company": "Your Company",
-    "form_company_placeholder": "e.g. Acme Technology Inc.",
-    "form_contact": "Work Email or Phone",
-    "form_contact_placeholder": "Email or phone number for easy communication",
-    "form_service": "Which services are you looking for?",
-    "form_services_options": ["Enterprise PC Website Architecture", "Multi-Platform Mobile Apps (iOS / Android Native or Cross-Platform)", "WeChat / Full-Ecosystem Mini-Program Development", "Complex Digital Business Backend Systems", "Full-Stack Consulting & Comprehensive Dev Solutions"],
-    "form_project": "Project Background & Core Requirements",
-    "form_project_placeholder": "Briefly describe the challenges you're facing or the outline of your great idea...",
-    "form_submit": "Start Your Expert Consultation",
-    "form_disabled_title": "System Check - Online Form Unavailable",
-    "form_disabled_desc": "For more efficient communication, please contact our project lead, Mr. Gu, directly via WeChat or phone.",
-    "form_privacy": "By submitting, you agree to our ",
-    "form_privacy_link": "Privacy Policy",
-    "form_privacy_end": ". FastX.ink provides top-tier protection for your business information.",
-    "contacts": [
-      { "label": "Project Lead: Mr. Gu", "value": "Phone/WeChat: 18601629233" },
-      { "label": "Business & Inquiries Email", "value": "hello{'@'}fastx.ink" }
-    ]
+    "tagline": "Local Trae multi-account session manager",
+    "license": "MIT License",
+    "rights": "© {year} Trae Session"
   }
 }
