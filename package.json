@@ -7,7 +7,6 @@
     "sync:downloads": "node scripts/sync-downloads.mjs",
     "predev": "npm run sync:downloads",
     "dev": "vite",
-    "prebuild": "npm run sync:downloads",
     "build": "vite build",
     "preview": "vite preview"
   },

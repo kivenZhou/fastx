@@ -33,8 +33,8 @@
     "btn": "Download",
     "macNote": "macOS: if blocked as “damaged”, run in Terminal:",
     "macCmd": "sudo xattr -rd com.apple.quarantine /Applications/Trae\\ Session.app",
-    "source": "Or build from source:",
-    "sourceCmd": "cd trae-accounts && npm install && npm start"
+    "source": "Installers are built from trae-accounts:",
+    "sourceCmd": "cd trae-accounts && npm run dist:all"
   },
   "features": {
     "label": "Features",

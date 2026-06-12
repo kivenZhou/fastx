@@ -12,10 +12,6 @@ dist
 dist-ssr
 *.local
 
-# Installer binaries (synced from trae-accounts/release)
-public/downloads/*.exe
-public/downloads/*.dmg
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -17,10 +17,37 @@ npm run build
 
 产物在 `dist/`，可部署到任意静态托管。
 
-## 下载包
+## 下载包从哪来？
 
-`npm run dev` / `npm run build` 会自动执行 `npm run sync:downloads`，从 `../trae-accounts/release/` 同步安装包到 `public/downloads/`。
+安装包**不是** fastx 生成的，流程如下：
 
-若安装包不存在，请先在 `trae-accounts` 目录执行 `npm run dist:all` 构建。
+```
+trae-accounts/          ← Electron 客户端源码
+  npm run dist:all      ← electron-builder 打包
+  release/*.dmg, *.exe  ← 构建产物
+       ↓
+fastx/public/downloads/ ← npm run sync:downloads 复制过来
+       ↓
+dist/downloads/         ← npm run build 打进部署目录
+       ↓
+线上用户点击下载
+```
 
-也可修改 `src/config.js` 中的 `DOWNLOADS` 链接为 GitHub Releases 地址。
+首次或发版时：
+
+```bash
+# 1. 在 trae-accounts 构建安装包
+cd ../trae-accounts && npm run dist:all
+
+# 2. 同步到网站并构建
+cd ../fastx
+npm run sync:downloads
+npm run build
+
+# 3. 提交安装包（DMG 走 Git LFS）并部署 dist/
+git add public/downloads/
+git commit -m "chore: update installers"
+git push
+```
+
+`npm run dev` / `npm run build` 会自动尝试同步；若 `trae-accounts/release/` 不存在会提示先构建。

@@ -1,45 +1,67 @@
 /**
- * Copy installer artifacts from trae-accounts/release into public/downloads/.
- * Run automatically before dev/build, or manually: npm run sync:downloads
+ * 将 trae-accounts 构建产物复制到 fastx/public/downloads/（仅本地发版时用）。
+ * CI 构建直接使用仓库里已提交的 public/downloads/，不依赖 trae-accounts。
  */
 import { copyFileSync, existsSync, mkdirSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { APP_VERSION } from '../src/config.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
 const releaseDir = join(root, '..', 'trae-accounts', 'release')
 const downloadsDir = join(root, 'public', 'downloads')
 
-const FILES = [
-  'Trae Session-0.2.0-win-x64.exe',
-  'Trae Session-0.2.0-mac-arm64.dmg',
-  'Trae Session-0.2.0-mac-x64.dmg',
+/** electron-builder 产物名 → 网站托管名（无空格，URL 友好） */
+const ARTIFACTS = [
+  {
+    src: `Trae Session-${APP_VERSION}-win-x64.exe`,
+    dest: `Trae-Session-${APP_VERSION}-win-x64.exe`,
+  },
+  {
+    src: `Trae Session-${APP_VERSION}-mac-arm64.dmg`,
+    dest: `Trae-Session-${APP_VERSION}-mac-arm64.dmg`,
+  },
+  {
+    src: `Trae Session-${APP_VERSION}-mac-x64.dmg`,
+    dest: `Trae-Session-${APP_VERSION}-mac-x64.dmg`,
+  },
 ]
 
 mkdirSync(downloadsDir, { recursive: true })
 
-let copied = 0
-let missing = []
+let synced = 0
+let existing = 0
+const missing = []
 
-for (const name of FILES) {
-  const src = join(releaseDir, name)
-  const dest = join(downloadsDir, name)
-  if (!existsSync(src)) {
-    missing.push(name)
+for (const { src, dest } of ARTIFACTS) {
+  const srcPath = join(releaseDir, src)
+  const destPath = join(downloadsDir, dest)
+
+  if (existsSync(srcPath)) {
+    copyFileSync(srcPath, destPath)
+    synced++
+    console.log(`synced ${dest}`)
     continue
   }
-  copyFileSync(src, dest)
-  copied++
-  console.log(`synced ${name}`)
+
+  if (existsSync(destPath)) {
+    existing++
+    console.log(`using existing ${dest}`)
+    continue
+  }
+
+  missing.push(dest)
 }
 
 if (missing.length) {
-  console.warn(
-    '\nMissing release artifacts (build trae-accounts first):\n' +
-      missing.map((f) => `  - trae-accounts/release/${f}`).join('\n'),
+  console.error(
+    '\n缺少安装包。本地发版请先构建 trae-accounts：\n' +
+      '  cd ../trae-accounts && npm run dist:all && cd ../fastx && npm run sync:downloads\n\n' +
+      '缺失：\n' +
+      missing.map((f) => `  - public/downloads/${f}`).join('\n'),
   )
-  process.exit(missing.length === FILES.length ? 1 : 0)
+  process.exit(1)
 }
 
-console.log(`\n${copied} installer(s) ready in public/downloads/`)
+console.log(`\n${synced} synced, ${existing} already in public/downloads/`)
