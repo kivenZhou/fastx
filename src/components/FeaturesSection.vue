@@ -1,18 +1,27 @@
 <script setup>
-import { ref, watch } from 'vue'
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { X } from 'lucide-vue-next'
 import SectionHeader from './SectionHeader.vue'
 import FadeContent from './bits/FadeContent.vue'
 import SpotlightCard from './bits/SpotlightCard.vue'
-import CircularGallery from './bits/CircularGallery.vue'
 import BorderGlow from './bits/BorderGlow.vue'
-import { buildGalleryItems } from '../utils/galleryImages.js'
 
 const { t, tm, locale } = useI18n()
 const featureKeys = ['switch', 'local', 'login', 'usage', 'backup', 'tray']
-const notDoItems = tm('notDo.items')
-const galleryItems = ref([])
+const notDoItems = computed(() => {
+  void locale.value
+  return tm('notDo.items')
+})
+
+const galleryMeta = {
+  switch: { from: '#6366f1', to: '#818cf8' },
+  local: { from: '#7c3aed', to: '#a78bfa' },
+  login: { from: '#0284c7', to: '#38bdf8' },
+  usage: { from: '#9333ea', to: '#c084fc' },
+  backup: { from: '#4f46e5', to: '#818cf8' },
+  tray: { from: '#7e22ce', to: '#c084fc' },
+}
 
 const spotlightColors = [
   'rgba(99, 102, 241, 0.35)',
@@ -22,16 +31,6 @@ const spotlightColors = [
   'rgba(129, 140, 248, 0.35)',
   'rgba(192, 132, 252, 0.3)',
 ]
-
-function refreshGallery() {
-  galleryItems.value = buildGalleryItems(
-    featureKeys,
-    (key) => t(`features.items.${key}.icon`),
-    (key) => t(`features.items.${key}.title`)
-  )
-}
-
-watch(locale, refreshGallery, { immediate: true })
 </script>
 
 <template>
@@ -44,17 +43,20 @@ watch(locale, refreshGallery, { immediate: true })
       />
 
       <FadeContent :threshold="0.1" class="mb-12">
-        <div class="h-[280px] sm:h-[340px] rounded-2xl overflow-hidden glass-panel border border-white/8">
-          <CircularGallery
-            v-if="galleryItems.length"
-            :key="locale"
-            :items="galleryItems"
-            :bend="2.5"
-            text-color="#e8eaef"
-            :border-radius="0.06"
-            font="600 22px Inter, sans-serif"
-            :scroll-speed="1.5"
-          />
+        <div class="feature-gallery glass-panel border border-white/8 rounded-2xl p-4 sm:p-5">
+          <div class="feature-gallery__track">
+            <div
+              v-for="key in featureKeys"
+              :key="key"
+              class="feature-gallery__card"
+              :style="{
+                background: `linear-gradient(135deg, ${galleryMeta[key]?.from ?? '#6366f1'}, ${galleryMeta[key]?.to ?? '#818cf8'})`
+              }"
+            >
+              <span class="feature-gallery__emoji">{{ t(`features.items.${key}.icon`) }}</span>
+              <span class="feature-gallery__title">{{ t(`features.items.${key}.title`) }}</span>
+            </div>
+          </div>
         </div>
         <p class="text-center text-xs text-[#6b7280] mt-3">{{ t('features.galleryHint') }}</p>
       </FadeContent>

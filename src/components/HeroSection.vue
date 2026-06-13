@@ -2,6 +2,7 @@
 import { useI18n } from 'vue-i18n'
 import { Download, BookOpen, Shield, Zap, Monitor } from 'lucide-vue-next'
 import { APP_VERSION } from '../config'
+import { brandIconPng } from '../brand.js'
 import FadeContent from './bits/FadeContent.vue'
 import GradientText from './bits/GradientText.vue'
 import ShinyText from './bits/ShinyText.vue'
@@ -84,9 +85,9 @@ const stats = [
               <div class="hero-preview__border" aria-hidden="true" />
               <div class="hero-preview__inner">
                 <div class="flex items-center gap-3 mb-5 pb-5 border-b border-white/[0.06]">
-                  <img src="/icon.svg" alt="" class="w-11 h-11 rounded-xl shadow-lg shadow-indigo-500/30" />
+                  <img :src="brandIconPng" alt="" class="w-11 h-11 rounded-xl shadow-lg shadow-indigo-500/30" />
                   <div>
-                    <div class="font-semibold text-white">Trae Session</div>
+                    <div class="font-semibold text-white">TraeHop</div>
                     <div class="text-xs text-[#6b7280]">3 accounts · 1 active</div>
                   </div>
                   <div class="ml-auto flex gap-1.5">

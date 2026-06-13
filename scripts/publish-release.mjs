@@ -1,5 +1,5 @@
 /**
- * 将 trae-accounts 构建产物发布到 GitHub Releases（供官网下载链接使用）。
+ * 将 traehop 构建产物发布到 GitHub Releases（供官网下载链接使用）。
  * 需要已安装并登录 gh CLI：brew install gh && gh auth login
  *
  * 用法：npm run publish:release
@@ -12,13 +12,13 @@ import { APP_VERSION, DOWNLOAD_FILES, GITHUB_REPO } from '../src/release-meta.js
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
-const releaseDir = join(root, '..', 'trae-accounts', 'release')
+const releaseDir = join(root, '..', 'traehop', 'release')
 const stagingDir = join(root, '.release-staging')
 
 const SRC_NAMES = {
-  win: `Trae Session-${APP_VERSION}-win-x64.exe`,
-  macArm: `Trae Session-${APP_VERSION}-mac-arm64.dmg`,
-  macX64: `Trae Session-${APP_VERSION}-mac-x64.dmg`,
+  win: `TraeHop-${APP_VERSION}-win-x64.exe`,
+  macArm: `TraeHop-${APP_VERSION}-mac-arm64.dmg`,
+  macX64: `TraeHop-${APP_VERSION}-mac-x64.dmg`,
 }
 
 const tag = `v${APP_VERSION}`
@@ -31,7 +31,7 @@ for (const key of Object.keys(DOWNLOAD_FILES)) {
   const src = join(releaseDir, SRC_NAMES[key])
   const dest = join(stagingDir, DOWNLOAD_FILES[key])
   if (!existsSync(src)) {
-    console.error(`缺少 ${src}\n请先在 trae-accounts 执行: npm run dist:all`)
+    console.error(`缺少 ${src}\n请先在 traehop 执行: npm run dist:all`)
     process.exit(1)
   }
   copyFileSync(src, dest)
@@ -43,8 +43,8 @@ const assetArgs = assets.flatMap((f) => ['--attach', f])
 const cmd = [
   'gh', 'release', 'create', tag,
   '--repo', GITHUB_REPO,
-  '--title', `Trae Session ${APP_VERSION}`,
-  '--notes', `Trae Session ${APP_VERSION} installers`,
+  '--title', `TraeHop ${APP_VERSION}`,
+  '--notes', `TraeHop ${APP_VERSION} installers`,
   ...assetArgs,
 ].join(' ')
 

@@ -4,7 +4,7 @@ import SectionHeader from './SectionHeader.vue'
 import FadeContent from './bits/FadeContent.vue'
 import SpotlightCard from './bits/SpotlightCard.vue'
 
-const { t, tm, te } = useI18n()
+const { t, tm, te, locale } = useI18n()
 const sections = ['install', 'add', 'switch', 'advanced', 'backup']
 
 const spotlightColors = [
@@ -16,6 +16,7 @@ const spotlightColors = [
 ]
 
 function sectionItems(key) {
+  void locale.value
   return tm(`tutorial.sections.${key}.items`) || []
 }
 

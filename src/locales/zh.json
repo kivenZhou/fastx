@@ -7,7 +7,7 @@
     "faq": "常见问题"
   },
   "hero": {
-    "badge": "v{version} · 本地多账号会话管理",
+    "badge": "v{version} · 本地多账号一键跃迁",
     "title1": "多个 Trae 账号，",
     "title2": "一键切换会话",
     "subtitle": "面向持有多个合法 Trae 账号的开发者与团队。手动切换、数据仅存本地，无需重复登录。",
@@ -32,14 +32,12 @@
     "macX64Hint": "Intel · x86_64",
     "btn": "下载",
     "macNote": "macOS 用户注意：若提示「已损坏」或「无法打开」，在终端执行：",
-    "macCmd": "sudo xattr -rd com.apple.quarantine /Applications/Trae\\ Session.app",
-    "source": "安装包由 trae-accounts 构建：",
-    "sourceCmd": "cd trae-accounts && npm run dist:all"
+    "macCmd": "sudo xattr -rd com.apple.quarantine /Applications/TraeHop.app"
   },
   "features": {
     "label": "Features",
     "title": "为 Trae 多账号而生",
-    "subtitle": "把会话切换交给 Trae Session，你只管专注写代码",
+    "subtitle": "账号切换交给 TraeHop，你只管专注写代码",
     "galleryHint": "拖动或滚动浏览各项特性",
     "items": {
       "switch": {
@@ -90,7 +88,7 @@
     "items": {
       "1": {
         "title": "下载并安装",
-        "desc": "在上方选择操作系统下载安装包，安装后启动 Trae Session，阅读并同意使用须知。"
+        "desc": "在上方选择操作系统下载安装包，安装后启动 TraeHop，阅读并同意使用须知。"
       },
       "2": {
         "title": "添加账号",
@@ -108,7 +106,7 @@
     "subtitle": "Trae IDE 多账号会话管理 — 添加、切换与备份",
     "sections": {
       "install": {
-        "title": "1 安装 Trae Session",
+        "title": "1 安装 TraeHop",
         "items": [
           "从本页下载对应平台的安装包并安装",
           "首次启动需阅读并同意使用须知",
@@ -129,7 +127,7 @@
         "title": "3 切换账号",
         "items": [
           "在目标账号卡片点击「切换」",
-          "Trae Session 会关闭 Trae、写入该账号的会话文件与设备标识",
+          "TraeHop 会关闭 Trae、写入该账号的会话文件与设备标识",
           "自动重新启动 Trae IDE，进入已登录状态"
         ],
         "warn": "切换前请保存 Trae 中未保存的代码，过程中 Trae 会自动重启。"
@@ -156,10 +154,10 @@
   "privacy": {
     "title": "数据与隐私",
     "items": {
-      "store": { "label": "账号存储", "value": "electron-store（应用用户数据目录）" },
-      "session": { "label": "Trae 会话", "value": "切换时写入 Trae 本地 App Support 目录" },
-      "mac": { "label": "macOS 路径", "value": "~/Library/Application Support/trae-accounts/" },
-      "win": { "label": "Windows 路径", "value": "%APPDATA%\\trae-accounts\\" }
+      "store": { "label": "账号存储", "value": "electron-store · ~/Library/Application Support/traehop/（macOS）" },
+      "session": { "label": "Trae 会话", "value": "切换时写入 Trae IDE 本地 App Support 目录" },
+      "mac": { "label": "macOS 路径", "value": "~/Library/Application Support/traehop/" },
+      "win": { "label": "Windows 路径", "value": "%APPDATA%\\traehop\\" }
     }
   },
   "faq": {
@@ -168,8 +166,8 @@
     "items": {
       "q1": { "q": "切换后 Trae 没有自动打开？", "a": "请检查设置中的 Trae 路径是否正确，确认 Trae 可执行文件存在。可尝试「自动扫描」或手动选择路径。" },
       "q2": { "q": "添加账号时提示 Token 无效？", "a": "确认 Token 完整无多余空格，检查是否已过期。推荐使用浏览器登录或 Cookie 刷新 Token。" },
-      "q3": { "q": "切换后 Trae 仍显示旧账号？", "a": "先手动关闭 Trae，在 Trae Session 中使用「环境清理」或「重置环境后切换」。若仍异常，检查是否选择了正确账号。" },
-      "q4": { "q": "数据会上传到服务器吗？", "a": "不会。所有账号与凭证仅保存在你的本机，Trae Session 不连接我们的任何后端服务。" },
+      "q3": { "q": "切换后 Trae 仍显示旧账号？", "a": "先手动关闭 Trae，在 TraeHop 中使用「环境清理」或「重置环境后切换」。若仍异常，检查是否选择了正确账号。" },
+      "q4": { "q": "数据会上传到服务器吗？", "a": "不会。所有账号与凭证仅保存在你的本机，TraeHop 不连接我们的任何后端服务。" },
       "q5": { "q": "支持 Linux 吗？", "a": "目前仅支持 macOS 与 Windows，与 Trae IDE 官方支持的平台一致。" },
       "q6": { "q": "使用本工具有风险吗？", "a": "可能违反 Trae 服务条款，存在账号受限风险。请仅管理您本人合法注册的账号，风险由用户自行承担。" },
       "q7": { "q": "如何备份账号？", "a": "在设置中使用加密导出，或开启自动本地备份。导出文件请妥善保管密码与文件。" }
@@ -187,8 +185,7 @@
     "accept": "继续使用客户端即表示您已阅读并同意上述条款"
   },
   "footer": {
-    "tagline": "本地 Trae 多账号会话管理",
-    "license": "MIT License",
-    "rights": "© {year} Trae Session"
+    "tagline": "本地 Trae 多账号一键跃迁",
+    "rights": "© {year} TraeHop"
   }
 }

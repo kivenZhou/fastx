@@ -61,11 +61,6 @@ const platforms = Object.entries(DOWNLOADS).map(([key, p]) => ({
             {{ t('download.macCmd') }}
           </code>
         </div>
-
-        <p class="text-center text-sm text-[#6b7280] mt-6">
-          {{ t('download.source') }}
-          <code class="font-mono text-xs text-[#9ca3af] ml-1">{{ t('download.sourceCmd') }}</code>
-        </p>
       </FadeContent>
     </div>
   </section>

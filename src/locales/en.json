@@ -7,7 +7,7 @@
     "faq": "FAQ"
   },
   "hero": {
-    "badge": "v{version} · Local session manager",
+    "badge": "v{version} · Hop between Trae accounts",
     "title1": "Multiple Trae accounts,",
     "title2": "one-click switch",
     "subtitle": "For developers and teams with multiple legitimate Trae accounts. Manual switching, all data stays local — no repeated logins.",
@@ -32,14 +32,12 @@
     "macX64Hint": "Intel · x86_64",
     "btn": "Download",
     "macNote": "macOS: if blocked as “damaged”, run in Terminal:",
-    "macCmd": "sudo xattr -rd com.apple.quarantine /Applications/Trae\\ Session.app",
-    "source": "Installers are built from trae-accounts:",
-    "sourceCmd": "cd trae-accounts && npm run dist:all"
+    "macCmd": "sudo xattr -rd com.apple.quarantine /Applications/TraeHop.app"
   },
   "features": {
     "label": "Features",
     "title": "Built for Trae multi-account",
-    "subtitle": "Let Trae Session handle sessions — you focus on code",
+    "subtitle": "Hop between Trae accounts — you focus on code",
     "galleryHint": "Drag or scroll to explore features",
     "items": {
       "switch": {
@@ -90,7 +88,7 @@
     "items": {
       "1": {
         "title": "Download & install",
-        "desc": "Download the installer above, launch Trae Session, and accept the disclaimer."
+        "desc": "Download the installer above, launch TraeHop, and accept the disclaimer."
       },
       "2": {
         "title": "Add accounts",
@@ -108,7 +106,7 @@
     "subtitle": "Add accounts, switch sessions, and back up",
     "sections": {
       "install": {
-        "title": "1 Install Trae Session",
+        "title": "1 Install TraeHop",
         "items": [
           "Download the installer for your platform",
           "Accept the disclaimer on first launch",
@@ -129,7 +127,7 @@
         "title": "3 Switch accounts",
         "items": [
           "Click Switch on the target account",
-          "Trae Session closes Trae, writes session files and device ID",
+          "TraeHop closes Trae, writes session files and device ID",
           "Trae IDE restarts logged in as that account"
         ],
         "warn": "Save unsaved code before switching — Trae will restart."
@@ -156,10 +154,10 @@
   "privacy": {
     "title": "Data & privacy",
     "items": {
-      "store": { "label": "Account store", "value": "electron-store (app user data)" },
-      "session": { "label": "Trae session", "value": "Written to Trae App Support on switch" },
-      "mac": { "label": "macOS path", "value": "~/Library/Application Support/trae-accounts/" },
-      "win": { "label": "Windows path", "value": "%APPDATA%\\trae-accounts\\" }
+      "store": { "label": "Account store", "value": "electron-store · ~/Library/Application Support/traehop/ (macOS)" },
+      "session": { "label": "Trae session", "value": "Written to Trae IDE local App Support on switch" },
+      "mac": { "label": "macOS path", "value": "~/Library/Application Support/traehop/" },
+      "win": { "label": "Windows path", "value": "%APPDATA%\\traehop\\" }
     }
   },
   "faq": {
@@ -168,8 +166,8 @@
     "items": {
       "q1": { "q": "Trae did not reopen after switch?", "a": "Check Trae path in Settings. Try auto-scan or pick the executable manually." },
       "q2": { "q": "Invalid token when adding?", "a": "Ensure the token is complete and not expired. Prefer browser login or cookie refresh." },
-      "q3": { "q": "Trae still shows the old account?", "a": "Close Trae manually, then use Environment clean or Reset & switch in Trae Session." },
-      "q4": { "q": "Is data uploaded?", "a": "No. Everything stays on your machine. Trae Session does not use our servers." },
+      "q3": { "q": "Trae still shows the old account?", "a": "Close Trae manually, then use Environment clean or Reset & switch in TraeHop." },
+      "q4": { "q": "Is data uploaded?", "a": "No. Everything stays on your machine. TraeHop does not use our servers." },
       "q5": { "q": "Linux support?", "a": "macOS and Windows only, matching Trae IDE." },
       "q6": { "q": "Any risks?", "a": "May violate Trae ToS. Use only accounts you own. You assume all risks." },
       "q7": { "q": "How to backup?", "a": "Encrypted export or auto backup in Settings. Keep your password and files safe." }
@@ -187,8 +185,7 @@
     "accept": "Using the client means you accept these terms"
   },
   "footer": {
-    "tagline": "Local Trae multi-account session manager",
-    "license": "MIT License",
-    "rights": "© {year} Trae Session"
+    "tagline": "Hop between your Trae accounts locally",
+    "rights": "© {year} TraeHop"
   }
 }

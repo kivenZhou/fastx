@@ -1,11 +1,15 @@
 <script setup>
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import FadeContent from './bits/FadeContent.vue'
 import BorderGlow from './bits/BorderGlow.vue'
 import ShinyText from './bits/ShinyText.vue'
 
-const { t, tm } = useI18n()
-const items = tm('disclaimer.items')
+const { t, tm, locale } = useI18n()
+const items = computed(() => {
+  void locale.value
+  return tm('disclaimer.items')
+})
 </script>
 
 <template>

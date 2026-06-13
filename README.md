@@ -1,6 +1,6 @@
-# Trae Session — 官网
+# TraeHop — 官网
 
-Trae Session 产品说明与下载落地页。基于 Vue 3 + Vite + Tailwind CSS。
+TraeHop 产品说明与下载落地页。基于 Vue 3 + Vite + Tailwind CSS。
 
 ## 开发
 
@@ -18,28 +18,21 @@ npm run build
 
 产物在 `dist/`，部署到 Cloudflare Pages。**安装包不要放进 dist**（Pages 单文件上限 25MB）。
 
-## 下载包从哪来？
+## 下载包发布
 
-```
-trae-accounts/          ← Electron 客户端源码
-  npm run dist:all      ← electron-builder 打包
-  release/*.dmg, *.exe
-       ↓
-GitHub Releases         ← npm run publish:release 上传
-       ↓
-官网下载按钮            ← 指向 GitHub Releases 直链
-```
-
-发版步骤：
+客户端在 `../traehop`，构建安装包：
 
 ```bash
-# 1. 构建安装包
-cd ../trae-accounts && npm run dist:all
+cd ../traehop && npm run dist:all
+```
 
-# 2. 发布到 GitHub Releases（需 gh CLI 已登录）
-cd ../fastx && npm run publish:release
+安装包通过 GitHub Releases 分发，官网下载按钮指向 Releases 直链。
 
-# 3. 部署网站
+```bash
+# 发布到 GitHub Releases（需 gh CLI 已登录，安装包需已准备好）
+npm run publish:release
+
+# 部署网站
 npm run build && git push
 ```
 

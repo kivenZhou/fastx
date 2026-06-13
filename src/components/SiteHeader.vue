@@ -2,6 +2,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { setLocale } from '../i18n'
+import { brandIconPng } from '../brand.js'
 
 const { t, locale } = useI18n()
 const scrolled = ref(false)
@@ -29,12 +30,12 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
 <template>
   <header class="fixed top-0 inset-x-0 z-50 px-4 sm:px-6 pt-4">
     <div
-      class="max-w-6xl mx-auto flex items-center justify-between gap-4 h-14 px-4 sm:px-5 transition-all duration-300"
-      :class="scrolled ? 'glass-panel rounded-2xl border border-white/10 shadow-lg shadow-indigo-500/5' : ''"
+      class="site-header__bar max-w-6xl mx-auto flex items-center justify-between gap-4 h-14 px-4 sm:px-5 transition-all duration-300"
+      :class="{ 'site-header__bar--scrolled': scrolled }"
     >
       <a href="#" class="flex items-center gap-2.5 shrink-0 no-underline text-white">
-        <img src="/icon.svg" alt="" class="w-8 h-8 rounded-lg shadow-lg shadow-indigo-500/30" />
-        <span class="font-semibold text-[15px] tracking-tight">Trae Session</span>
+        <img :src="brandIconPng" alt="" class="w-8 h-8 rounded-lg shadow-lg shadow-indigo-500/30" />
+        <span class="font-semibold text-[15px] tracking-tight">TraeHop</span>
       </a>
       <nav class="hidden md:flex items-center gap-1">
         <a v-for="item in nav" :key="item.id" :href="`#${item.id}`" class="px-3 py-2 text-sm text-[#9ca3af] hover:text-white rounded-lg transition-colors no-underline hover:bg-white/5">{{ t(item.key) }}</a>
