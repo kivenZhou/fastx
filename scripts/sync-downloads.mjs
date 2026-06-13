@@ -12,12 +12,7 @@ const root = join(__dirname, '..')
 const releaseDir = join(root, '..', 'traehop', 'release')
 const downloadsDir = join(root, 'public', 'downloads')
 
-/** electron-builder 产物名 → 本地测试用文件名 */
-const ARTIFACTS = [
-  { src: `TraeHop-${APP_VERSION}-win-x64.exe`, dest: DOWNLOAD_FILES.win },
-  { src: `TraeHop-${APP_VERSION}-mac-arm64.dmg`, dest: DOWNLOAD_FILES.macArm },
-  { src: `TraeHop-${APP_VERSION}-mac-x64.dmg`, dest: DOWNLOAD_FILES.macX64 },
-]
+const ARTIFACTS = Object.values(DOWNLOAD_FILES).map((name) => ({ src: name, dest: name }))
 
 mkdirSync(downloadsDir, { recursive: true })
 
