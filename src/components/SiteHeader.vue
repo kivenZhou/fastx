@@ -1,11 +1,14 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { Github, Star } from 'lucide-vue-next'
 import { setLocale } from '../i18n'
 import { brandIconPng } from '../brand.js'
+import { githubRepoUrl } from '../config'
 
 const { t, locale } = useI18n()
 const scrolled = ref(false)
+const sourceUrl = githubRepoUrl()
 
 const nav = [
   { id: 'download', key: 'nav.download' },
@@ -36,11 +39,24 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
       <a href="#" class="flex items-center gap-2.5 shrink-0 no-underline text-white">
         <img :src="brandIconPng" alt="" class="w-8 h-8 rounded-lg shadow-lg shadow-indigo-500/30" />
         <span class="font-semibold text-[15px] tracking-tight">TraeHop</span>
+        <span class="hidden sm:inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-semibold tracking-wide uppercase bg-indigo-500/20 text-indigo-200 border border-indigo-400/25">
+          {{ t('hero.officialBadge') }}
+        </span>
       </a>
       <nav class="hidden md:flex items-center gap-1">
         <a v-for="item in nav" :key="item.id" :href="`#${item.id}`" class="px-3 py-2 text-sm text-[#9ca3af] hover:text-white rounded-lg transition-colors no-underline hover:bg-white/5">{{ t(item.key) }}</a>
       </nav>
       <div class="flex items-center gap-2">
+        <a
+          :href="sourceUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-[#d1d5db] hover:text-white border border-white/10 rounded-lg bg-white/5 transition-colors no-underline hover:border-amber-400/30 hover:bg-amber-500/10"
+        >
+          <Github :size="14" />
+          <Star :size="12" class="text-amber-300" />
+          {{ t('nav.github') }}
+        </a>
         <button type="button" class="px-3 py-1.5 text-xs font-medium text-[#9ca3af] hover:text-white border border-white/10 rounded-lg bg-white/5 transition-colors cursor-pointer" @click="toggleLang">{{ locale === 'zh' ? 'EN' : '中文' }}</button>
         <a href="#download" class="btn-primary !py-2 !px-4 !text-sm hidden sm:inline-flex">{{ t('nav.download') }}</a>
       </div>

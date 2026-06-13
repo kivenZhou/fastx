@@ -4,15 +4,19 @@
     "features": "特性",
     "start": "快速开始",
     "tutorial": "使用教程",
-    "faq": "常见问题"
+    "faq": "常见问题",
+    "github": "GitHub"
   },
   "hero": {
+    "officialBadge": "官方版",
     "badge": "v{version} · 本地多账号一键跃迁",
     "title1": "多个 Trae 账号，",
     "title2": "一键切换会话",
     "subtitle": "面向持有多个合法 Trae 账号的开发者与团队。手动切换、数据仅存本地，无需重复登录。",
     "ctaDownload": "立即下载",
     "ctaTutorial": "查看使用教程",
+    "ctaStar": "Star 支持开源",
+    "openSource": "客户端与官网均 MIT 开源 · 代码可审计 · 欢迎 Star 与贡献",
     "stat1Value": "本地",
     "stat1Label": "数据不上传",
     "stat2Value": "手动",
@@ -32,7 +36,12 @@
     "macX64Hint": "Intel · x86_64",
     "btn": "下载",
     "macNote": "macOS 用户注意：若提示「已损坏」或「无法打开」，在终端执行：",
-    "macCmd": "sudo xattr -rd com.apple.quarantine /Applications/TraeHop.app"
+    "macCmd": "sudo xattr -rd com.apple.quarantine /Applications/TraeHop.app",
+    "officialTitle": "官方下载渠道",
+    "officialDesc": "请从 {site} 或 TraeHop GitHub Releases 下载安装包，以确保版本正版、可更新。第三方打包版本我们无法保证安全性。",
+    "viewSource": "查看源码",
+    "viewReleases": "GitHub Releases",
+    "starRepo": "给项目 Star"
   },
   "features": {
     "label": "Features",
@@ -186,6 +195,12 @@
   },
   "footer": {
     "tagline": "本地 Trae 多账号一键跃迁",
+    "officialPrefix": "TraeHop 官方站点",
+    "appSource": "客户端源码",
+    "siteSource": "官网源码",
+    "releases": "安装包",
+    "star": "Star 项目",
+    "license": "客户端与官网均 MIT 开源",
     "rights": "© {year} TraeHop"
   }
 }

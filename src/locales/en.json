@@ -4,15 +4,19 @@
     "features": "Features",
     "start": "Quick Start",
     "tutorial": "Tutorial",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "github": "GitHub"
   },
   "hero": {
+    "officialBadge": "Official",
     "badge": "v{version} · Hop between Trae accounts",
     "title1": "Multiple Trae accounts,",
     "title2": "one-click switch",
     "subtitle": "For developers and teams with multiple legitimate Trae accounts. Manual switching, all data stays local — no repeated logins.",
     "ctaDownload": "Download",
     "ctaTutorial": "View tutorial",
+    "ctaStar": "Star on GitHub",
+    "openSource": "App & website MIT open source · auditable · stars & contributions welcome",
     "stat1Value": "Local",
     "stat1Label": "No cloud upload",
     "stat2Value": "Manual",
@@ -32,7 +36,12 @@
     "macX64Hint": "Intel · x86_64",
     "btn": "Download",
     "macNote": "macOS: if blocked as “damaged”, run in Terminal:",
-    "macCmd": "sudo xattr -rd com.apple.quarantine /Applications/TraeHop.app"
+    "macCmd": "sudo xattr -rd com.apple.quarantine /Applications/TraeHop.app",
+    "officialTitle": "Official download channel",
+    "officialDesc": "Download from {site} or TraeHop GitHub Releases for authentic, updatable builds. We cannot verify third-party repacks.",
+    "viewSource": "View source",
+    "viewReleases": "GitHub Releases",
+    "starRepo": "Star the project"
   },
   "features": {
     "label": "Features",
@@ -186,6 +195,12 @@
   },
   "footer": {
     "tagline": "Hop between your Trae accounts locally",
+    "officialPrefix": "TraeHop official site",
+    "appSource": "App source",
+    "siteSource": "Site source",
+    "releases": "Releases",
+    "star": "Star project",
+    "license": "App & website MIT open source",
     "rights": "© {year} TraeHop"
   }
 }

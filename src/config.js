@@ -1,6 +1,17 @@
 import { APP_VERSION, DOWNLOAD_FILES, releaseUrl } from './release-meta.js'
 
-export { APP_VERSION, DOWNLOAD_FILES, GITHUB_REPO } from './release-meta.js'
+export {
+  APP_VERSION,
+  DOWNLOAD_FILES,
+  GITHUB_REPO,
+  OFFICIAL_SITE,
+  RELEASE_REPO,
+  SITE_REPO,
+  SOURCE_REPO,
+  githubRepoUrl,
+  githubReleasesUrl,
+  officialSiteUrl,
+} from './release-meta.js'
 
 function downloadUrl(filename) {
   const env = import.meta.env

@@ -1,7 +1,7 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
-import { Download, BookOpen, Shield, Zap, Monitor } from 'lucide-vue-next'
-import { APP_VERSION } from '../config'
+import { Download, BookOpen, Shield, Zap, Monitor, Star, Github } from 'lucide-vue-next'
+import { APP_VERSION, githubRepoUrl } from '../config'
 import { brandIconPng } from '../brand.js'
 import FadeContent from './bits/FadeContent.vue'
 import GradientText from './bits/GradientText.vue'
@@ -9,6 +9,7 @@ import ShinyText from './bits/ShinyText.vue'
 import BorderGlow from './bits/BorderGlow.vue'
 
 const { t } = useI18n()
+const sourceUrl = githubRepoUrl()
 
 const stats = [
   { icon: Shield, valueKey: 'hero.stat1Value', labelKey: 'hero.stat1Label' },
@@ -22,7 +23,10 @@ const stats = [
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <FadeContent :threshold="0.15">
-          <div class="mb-6">
+          <div class="mb-6 flex flex-wrap items-center gap-2">
+            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold tracking-wide bg-emerald-500/15 text-emerald-200 border border-emerald-400/25">
+              {{ t('hero.officialBadge') }}
+            </span>
             <ShinyText
               :text="t('hero.badge', { version: APP_VERSION })"
               class-name="text-sm font-medium"
@@ -47,7 +51,7 @@ const stats = [
             {{ t('hero.subtitle') }}
           </p>
 
-          <div class="flex flex-wrap gap-3 mb-12">
+          <div class="flex flex-wrap gap-3 mb-4">
             <BorderGlow
               :border-radius="14"
               :colors="['#818cf8', '#a78bfa', '#38bdf8']"
@@ -63,7 +67,22 @@ const stats = [
               <BookOpen :size="18" />
               {{ t('hero.ctaTutorial') }}
             </a>
+            <a
+              :href="sourceUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-ghost hover:!border-amber-400/35 hover:!bg-amber-500/10"
+            >
+              <Github :size="18" />
+              <Star :size="16" class="text-amber-300" />
+              {{ t('hero.ctaStar') }}
+            </a>
           </div>
+
+          <p class="text-sm text-[#6b7280] mb-12 flex items-center gap-2">
+            <Github :size="14" class="shrink-0 text-indigo-400" />
+            {{ t('hero.openSource') }}
+          </p>
 
           <div class="grid grid-cols-3 gap-4">
             <div
